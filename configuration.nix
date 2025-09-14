@@ -9,11 +9,12 @@
     ];
   # My services :)
   services.spice-vdagentd.enable = true;
-  services.xserver = {
-    enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
-  };
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+	services.displayManager.sddm.theme = "sddm-sugar-dark";
+	hardware.bluetooth.enable = true;
+	services.blueman.enable = true;
+
   # My programs
   programs.hyprland.enable = true;
 
@@ -80,15 +81,63 @@
 # $ nix search wget
   environment.systemPackages = with pkgs; [
 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-	    wget
+	    # Core desktop / Hyprland
+			hyprland
+			hyprpaper
+			swww
+			waybar
+			wlroots
+			xdg-desktop-portal-wlr
+			xdg-desktop-portal
+			kdePackages.sddm
+			fish
+			kitty
+			neovim # Need to get nightly
+			gedit
+			rofi
+			ranger
+			playerctl # do i need this?
+			pavucontrol
+			pamixer
+			brightnessctl
+			grim
+			slurp
+			wl-clipboard
+			mako
+			viewnior
+			zathura
+			imagemagick
+			wtype
+			rofi-emoji
+			mpv
+			ranger
+			# Dev tools
+			nodejs
+			bun
+			jdk
+			python3
+			python311Packages.pip
+
+			# Fonts
+			jetbrains-mono
+			noto-fonts-emoji
+			inter
+
+			# Desktop extras
+			blueberry
+			bluez
+			bluez-tools
+			xdg-user-dirs
+			gnome-keyring
+			neofetch
+			obs-studio
+			vlc
+			discord
+			vscode
+			wget
 		  git
 		  qutebrowser
 		  vim
-		  hyprland
-		  hyprpaper
-		  kdePackages.sddm
-		  kitty
-			pkgs.neovim-nightly
   ];
 
 
