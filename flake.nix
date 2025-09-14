@@ -12,6 +12,7 @@
 	outputs = { self, nixpkgs, home-manager, dotfiles, ... }: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
+			pkgs = import nixpkgs { inherit system; }; 
 			modules = [
 				./configuration.nix
 				home-manager.nixosModules.home-manager

@@ -1,4 +1,3 @@
-{ config, pkgs, dotfiles, ... }:
 
 {
 	home.username = "gilli";
