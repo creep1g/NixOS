@@ -21,9 +21,9 @@
 				modules = [
 					./configuration.nix
 					home-manager.nixosModules.home-manager
-				  { 
-          	home-manager.users.gilli = ./home.nix; 
-  				}
+				  ({ pkgs, config, ... }: { 
+          	home-manager.users.gilli = import ./home.nix { dotfiles = dotfiles; };
+  				})
 				];
 			};
 		};
