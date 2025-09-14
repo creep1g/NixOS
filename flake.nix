@@ -22,7 +22,7 @@
 					./configuration.nix
 					home-manager.nixosModules.home-manager
 				  { 
-          	home-manager.users.gilli = ./home.nix { inherit pkgs dotfiles; };
+          	home-manager.users.gilli = ./home.nix; 
   				}
 				];
 			};

@@ -1,10 +1,8 @@
-{ pkgs, dotfiles, ... }:
-
 {
 	home.username = "gilli";
 	home.homeDirectory = "/home/gilli";
 	
-	program.fish.enable = true;
+	programs.fish.enable = true;
 	
 	# Link dotfiles!
 	
