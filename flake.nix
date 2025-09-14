@@ -15,12 +15,13 @@
 			pkgs = import nixpkgs { inherit system; }; 
 		in {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+			inherit system;
+
 			modules = [
 				./configuration.nix
 				home-manager.nixosModules.home-manager
 				{
-					home-manager.users.gilli = import ./home.nix { inherit pkgs config dotfiles; };
-				}
+					home-manager.users.gilli = import ./home.nix { inherit pkgs dotfiles }
 			];
 		};
 	};

@@ -1,3 +1,4 @@
+{ pkgs, dotfiles, ... }:
 
 {
 	home.username = "gilli";
@@ -17,9 +18,9 @@
 		".config/rofi".source = "${dotfiles}/.config/rofi";
 		".config/dunst".source = "${dotfiles}/.config/dunst";
 		".config/wal".source = "${dotfiles}/.config/wal";
+		"Wallpapers".source = "${dotfiles}Wallpapers";
 	};
 	
-	home.file."Wallpapers".source = "${dotfiles}/Wallpapers";
 	
 	home.stateVersion = "25.05";
 }
