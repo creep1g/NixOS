@@ -8,6 +8,7 @@
 		dotfiles.url = "github:creep1g/NixOS-Dotfiles"; # Repo
 	};
 
+
 	outputs = { self, nixpkgs, home-manager, dotfiles, ... }: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixossystem {
 			system = "x86_64-linux";
