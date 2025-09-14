@@ -10,20 +10,21 @@
 
 
 	outputs = { self, nixpkgs, home-manager, dotfiles, ... }: 
-		let
-			system = "x86_64-linux";
-			pkgs = import nixpkgs { inherit system; }; 
-		in {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-			inherit system;
-
-			modules = [
-				./configuration.nix
-				home-manager.nixosModules.home-manager
-				{
-					home-manager.users.gilli = import ./home.nix { inherit pkgs dotfiles }
-				}
-			];
+		let 
+			system = "x86_64-linux"
+			pkgs = import nixpkgs { inherit system; };
+		in
+		{
+			nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+				inherit system;
+			
+				modules = [
+					./configuration.nix
+					home-manager.nixosModules.home-manager
+				  { 
+          	home-manager.users.gilli = ./home.nix { inherit pkgs dotfiles; };
+  				}
+				];
+			};
 		};
-	};
 }
