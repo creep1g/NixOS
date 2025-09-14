@@ -16,7 +16,7 @@
 				./configuration.nix
 				home-manager.nixosModules.home-manager
 				{
-					home-manager.users.gilli = import ./home.nix { inherit dotfiles; };
+					home-manager.users.gilli = import ./home.nix { inherit pkgs config dotfiles; };
 				}
 			];
 		};
