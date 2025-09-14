@@ -9,10 +9,12 @@
 	};
 
 
-	outputs = { self, nixpkgs, home-manager, dotfiles, ... }: {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+	outputs = { self, nixpkgs, home-manager, dotfiles, ... }: 
+		let
 			system = "x86_64-linux";
 			pkgs = import nixpkgs { inherit system; }; 
+		in {
+		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			modules = [
 				./configuration.nix
 				home-manager.nixosModules.home-manager
