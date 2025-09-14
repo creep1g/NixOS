@@ -2,7 +2,7 @@
 	description = "NixOS + Hyprland + Dotfiles setup";
 	
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos/-unstable";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		home-manager.url = "github:nix-community/home-manager";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		dotfiles.url = "github:creep1g/NixOS-Dotfiles"; # Repo
