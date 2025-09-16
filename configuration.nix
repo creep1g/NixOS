@@ -16,7 +16,23 @@
 	services.blueman.enable = true;
 
   # My programs
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+	enable = true;
+    settings = {
+     	 input = {
+        # The keymap layout to use. Use 'us' and your custom layout name 'dvo-mod'
+        # with the 'dvorak' variant.
+      	  kb_layout = "us,dvo-mod";
+
+        # The variant to use for the selected layout.
+        # This will apply the 'dvorak' variant to the 'dvo-mod' layout.
+        	kb_variant = ",dvorak";
+
+        # Optional: Set a key combination to switch between the layouts
+        	kb_options = "grp:alt_shift_toggle";
+      };
+    };	
+};
 
 # Bootloader.
   boot.loader.grub.enable = true;
