@@ -58,10 +58,10 @@
 #	(import ./overlay-xkb.nix)
 #	];
 # Configure keymap in X11
-  services.xserver.xkb = {
-	  layout = "custom";
-	  variant = "dvorak";
-  };
+  #services.xserver.xkb = {
+#	  layout = "custom";
+#	  variant = "dvorak";
+ # };
 
 # Configure console keymap
   console.keyMap = "dvorak";
