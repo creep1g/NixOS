@@ -568,7 +568,7 @@ in
 {
   # 1. Define the custom layout. The custom symbols file is registered under the name 'dvo-mod'.
   services.xserver = {
-      xkb.extraLayouts.dvo-mod = {
+      xkb.extraLayouts.us = {
           description = "My Customized Dvorak Layout";
           languages = [ "eng" ];
           symbolsFile = myCustomKeymap;
@@ -581,7 +581,7 @@ in
       # I'll use the base layout name, and you can change it if necessary.
       # You must choose *only one* of the options below. I recommend the second one for clarity.
       # xkb.layout = "us,dvo-mod"; # Fallback layout and base custom layout
-      xkb.layout = "us,dvo-mod(dvorak)"; # Standard US and the Dvorak variant from your custom file
+      xkb.layout = "us,dvorak"; # Standard US and the Dvorak variant from your custom file
 
       # 3. Add an option to easily switch between layouts, e.g., using Alt+Shift.
       xkb.options = "grp:alt_shift_toggle";
