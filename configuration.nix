@@ -54,9 +54,12 @@
 	  LC_TIME = "is_IS.UTF-8";
   };
 
+#  nixpkgs.overlays = [
+#	(import ./overlay-xkb.nix)
+#	];
 # Configure keymap in X11
   services.xserver.xkb = {
-	  layout = "us";
+	  layout = "custom";
 	  variant = "dvorak";
   };
 
@@ -70,13 +73,22 @@
 	  extraGroups = [ "networkmanager" "wheel" ];
 	  packages = with pkgs; [];
   };
+
+	programs.nix-ld.enable = true;
+	#programs.nix-ld.enable = with pkgs; [];
 # Experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nixpkgs.config.allowUnfree = true;
+
+
 # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
 # spice service
-
+# SHel
+programs.fish.enable = true;
+users.users.gilli = {
+	shell = pkgs.fish;
+};
 # List packages installed in system profile. To search, run:
 # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -87,14 +99,18 @@
 			swww
 			waybar
 			wlroots
+			bash
 			xdg-desktop-portal-wlr
+			inotify-tools
 			xdg-desktop-portal
 			kdePackages.sddm
 			fish
 			kitty
 			neovim # Need to get nightly
+			gcc
 			gedit
 			rofi
+			pywal
 			ranger
 			playerctl # do i need this?
 			pavucontrol
@@ -139,7 +155,6 @@
 		  qutebrowser
 		  vim
   ];
-
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.

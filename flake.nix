@@ -20,10 +20,16 @@
 			
 				modules = [
 					./configuration.nix
+					./modules/keyboard.nix
 					home-manager.nixosModules.home-manager
-				  ({ pkgs, config, ... }: { 
-          	home-manager.users.gilli = import ./home.nix { dotfiles = dotfiles; };
-  				})
+					{
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.users.gilli = { ... }: {
+							imports = [ ./home.nix ];
+							_module.args.dotfiles = dotfiles;
+						};
+					}
 				];
 			};
 		};
