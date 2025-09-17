@@ -103,13 +103,7 @@ users.users.gilli = {
 			wayland
 			swww
 			swaylock
-    (pkgs.swaylock-fancy.overrideAttrs (old: {
-      postPatch = ''
-        substituteInPlace ${old}/bin/fancy-lock \
-          --replace "convert" "magick convert"
-      '';
-    }))
-
+			swaylock-fancy
 			waybar
 			htop
 			wlroots
