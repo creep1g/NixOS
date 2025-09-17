@@ -13,8 +13,8 @@ let
 
   # Package that installs fonts to Nix store
   myFonts = pkgs.runCommand "my-fonts" {} ''
-    mkdir -p $out/share/fonts/truetype/myfonts
-    cp ${fontRepo}/monolisa-font/fonts/web/*.woff2 $out/share/fonts/
+    mkdir -p $out/share/fonts/truetype/MonoLisa
+    cp ${fontRepo}/monolisa-font/fonts/web/*.woff2 $out/share/fonts/truetype/MonoLisa
   '';
 in
 
