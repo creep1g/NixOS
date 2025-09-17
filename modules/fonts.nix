@@ -11,8 +11,8 @@
 #  ];
 
   fonts.packages = with pkgs; [
+    pkgs.nerd-fents.droid
     jetbrains-mono
-    nerdfonts
     noto-fonts-emoji
     inter
     dejavu_fonts
