@@ -128,7 +128,7 @@ users.users.gilli = {
 			mako
 			viewnior
 			zathura
-			imagemagick6
+			imagemagick
 			wtype
 			rofi-emoji
 			mpv
@@ -156,6 +156,11 @@ users.users.gilli = {
 		  qutebrowser
 		  vim
   ];
+
+  environment.variables = {
+    IM6_COMPAT = "1";
+    MAGICK_HOME = "/run/current-system/sw";
+  };
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
