@@ -11,11 +11,12 @@
 #  ];
 
   fonts.packages = with pkgs; [
-    pkgs.nerd-fonts.droid
-    jetbrains-mono
-    noto-fonts-emoji
+		nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.noto-fonts-emoji
+		nerd-fonts.hack
     inter
-    dejavu_fonts
-    liberation_ttf
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.liberation
   ];
 }
