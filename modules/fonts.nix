@@ -4,7 +4,7 @@
 
 let
   # Fetch your GitHub repo with fonts
-  fontRepo = pkgs.fetchFromGithub {
+  fontRepo = pkgs.fetchFromGitHub {
 	owner = "creep1g";
 	repo = "OhSoManyFonts";
 	rev = "803e0bf21d421b5d5f372493585a212c0c227bc4";
