@@ -2,7 +2,6 @@
 
 {
 	imports = [
-		./packges.nix
 		./config.nix
 	];
 }

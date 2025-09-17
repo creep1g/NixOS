@@ -16,9 +16,9 @@
 	services.blueman.enable = true;
 
   # My programs
-  #programs.hyprland = {
-#	enable = true;
-#};
+  programs.hyprland = {
+	enable = true;
+};
 
 # Bootloader.
   boot.loader.grub.enable = true;
@@ -60,10 +60,10 @@
 #	(import ./overlay-xkb.nix)
 #	];
 # Configure keymap in X11
-  #services.xserver.xkb = {
-#	  layout = "custom";
-#	  variant = "dvorak";
- # };
+  services.xserver.xkb = {
+	  layout = "custom";
+	  variant = "dvorak";
+  };
 
 # Configure console keymap
   console.keyMap = "dvorak";
@@ -101,6 +101,7 @@ users.users.gilli = {
 			wayland
 			swww
 			waybar
+			htop
 			wlroots
 			bash
 			xdg-desktop-portal-wlr

@@ -3,5 +3,6 @@
 {
 	imports = [
 	./keyboard.nix
+	./fonts.nix
 	];
 }
