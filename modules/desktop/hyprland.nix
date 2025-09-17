@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+	programs.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+	};
+
   wayland.windowManager.hyprland = {
     enable = true;
 

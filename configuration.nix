@@ -16,9 +16,9 @@
 	services.blueman.enable = true;
 
   # My programs
-  programs.hyprland = {
-	enable = true;
-};
+  #programs.hyprland = {
+#	enable = true;
+#};
 
 # Bootloader.
   boot.loader.grub.enable = true;
