@@ -138,11 +138,6 @@ users.users.gilli = {
 			python3
 			python311Packages.pip
 
-			# Fonts
-			jetbrains-mono
-			noto-fonts-emoji
-			inter
-
 			# Desktop extras
 			blueberry
 			bluez
