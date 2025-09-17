@@ -3,4 +3,4 @@
 sudo git add .
 sudo git commit -m "New commit"
 
-sudo nix-rebuild switch --flake .#nixos
+sudo nixos-rebuild switch --flake .#nixos
