@@ -128,7 +128,7 @@ users.users.gilli = {
 			mako
 			viewnior
 			zathura
-			imagemagick
+			imagemagick6
 			wtype
 			rofi-emoji
 			mpv
