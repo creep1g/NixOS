@@ -11,10 +11,10 @@
 #  ];
 
   fonts.packages = with pkgs; [
-		nerd-fonts.droid-sans-mono
+    nerd-fonts.droid-sans-mono
     nerd-fonts.jetbrains-mono
-    nerd-fonts.noto-fonts-emoji
-		nerd-fonts.hack
+    nerd-fonts.noto
+    nerd-fonts.hack
     inter
     nerd-fonts.dejavu-sans-mono
     nerd-fonts.liberation
