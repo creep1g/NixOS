@@ -8,7 +8,7 @@ let
     owner = "creep1g";       # replace with your GitHub username
     repo = "OhSoManyFonts";           # replace with your repo name
     rev = "main";             # or pin to a commit hash
-    sha256 = "0000000000000000000000000000000000000000000000000000"; # replace with correct hash
+    sha256 = "70hNYPQGVkyHi9THqGkgX4HZCIweNomM00hlRWF37YY="; # replace with correct hash
   };
 
   # Package that installs fonts to Nix store
