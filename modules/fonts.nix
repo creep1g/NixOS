@@ -4,7 +4,7 @@
 
 let
   # Fetch your GitHub repo with fonts
-  fontRepo = /home/gilli/.local/share/OhSoManyFonts/usr/share/fonts
+  fontRepo = /home/gilli/.local/share/OhSoManyFonts/usr/share/fonts;
 
   # Package that installs fonts to Nix store
   myFonts = pkgs.runCommand "my-fonts" {} ''
