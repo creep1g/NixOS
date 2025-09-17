@@ -100,7 +100,7 @@ users.users.gilli = {
 			hyprpaper
 			wayland
 			swww
-			swaylock
+			unstable.swaylock
 			waybar
 			htop
 			wlroots
