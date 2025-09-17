@@ -4,5 +4,6 @@
 	imports = [
 	./keyboard.nix
 	./fonts.nix
+	./swaylock.nix
 	];
 }
