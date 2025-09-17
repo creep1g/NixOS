@@ -92,12 +92,7 @@ users.users.gilli = {
 	shell = pkgs.fish;
 };
 
-swaylock-fancy = pkgs.swaylock-fancy.overrideAttrs (old: {
-  postPatch = ''
-    substituteInPlace ${old}/bin/fancy-lock \
-      --replace "convert" "magick convert"
-  '';
-});
+
 # List packages installed in system profile. To search, run:
 # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -107,8 +102,13 @@ swaylock-fancy = pkgs.swaylock-fancy.overrideAttrs (old: {
 			hyprpaper
 			wayland
 			swww
+                        swaylock-fancy = pkgs.swaylock-fancy.overrideAttrs (old: {
+                          postPatch = ''
+                            substituteInPlace ${old}/bin/fancy-lock \
+                            --replace "convert" "magick convert"
+                           '';
+                        });
 			swaylock
-			swaylock-fancy
 			waybar
 			htop
 			wlroots
