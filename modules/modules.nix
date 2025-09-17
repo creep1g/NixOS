@@ -2,4 +2,4 @@
 [
 	./keyboard.nix
 	./desktop/hyprland.nix
-];
+]
