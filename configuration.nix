@@ -101,7 +101,8 @@ unstable = import <nixpkgs> { system = "x86_64-linux"; };
 			hyprpaper
 			wayland
 			swww
-			unstable.swaylock
+			swaylock
+			swaylock-fancy
 			waybar
 			htop
 			wlroots
