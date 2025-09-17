@@ -11,7 +11,7 @@
 #  ];
 
   fonts.packages = with pkgs; [
-    pkgs.nerd-fents.droid
+    pkgs.nerd-fonts.droid
     jetbrains-mono
     noto-fonts-emoji
     inter
