@@ -98,6 +98,7 @@ users.users.gilli = {
 	    # Core desktop / Hyprland
 			hyprland
 			hyprpaper
+			wayland
 			swww
 			waybar
 			wlroots
