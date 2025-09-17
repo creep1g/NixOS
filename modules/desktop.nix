@@ -2,6 +2,6 @@
 { ... }:
 {
 	imports = [
-	./keyboard.nix
+	./desktop/hyprland.nix
 	];
 }
