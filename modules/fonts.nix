@@ -7,7 +7,7 @@ let
   fontRepo = pkgs.fetchFromGitHub {
     owner = "creep1g";       # replace with your GitHub username
     repo = "OhSoManyFonts";           # replace with your repo name
-    rev = "main";             # or pin to a commit hash
+    rev = "5d5e601ab8caed950d5741c0ead7c3912148cdcd";             # or pin to a commit hash
     sha256 = "00000000000000000000000000000000000000000000"; # replace with correct hash
   };
 
