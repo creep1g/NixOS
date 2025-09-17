@@ -1,6 +1,6 @@
 # modules/fonts.nix
 # /home/gilli/.local/share/OhSoManyFonts/usr/share/fonts
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   # Fetch your GitHub repo with fonts
@@ -8,7 +8,7 @@ let
     owner = "creep1g";       # replace with your GitHub username
     repo = "OhSoManyFonts";           # replace with your repo name
     rev = "5d5e601ab8caed950d5741c0ead7c3912148cdcd";             # or pin to a commit hash
-    sha256 = "00000000000000000000000000000000000000000000"; # replace with correct hash
+    sha256 = lib.fakeSha256; # replace with correct hash
   };
 
   # Package that installs fonts to Nix store
