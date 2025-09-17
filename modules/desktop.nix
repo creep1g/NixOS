@@ -2,6 +2,6 @@
 { ... }:
 {
 	imports = [
-	./desktop/hyprland.nix
+	./desktop/hyprland/hyprland.nix
 	];
 }
