@@ -94,14 +94,6 @@ users.users.gilli = {
 
 
 # List packages installed in system profile. To search, run:
- environment.systemPackages = with pkgs; [
-    (pkgs.swaylock-fancy.overrideAttrs (old: {
-      postPatch = ''
-        substituteInPlace ${old}/bin/fancy-lock \
-          --replace "convert" "magick convert"
-      '';
-    }))
-  ];
 # $ nix search wget
   environment.systemPackages = with pkgs; [
 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -111,6 +103,13 @@ users.users.gilli = {
 			wayland
 			swww
 			swaylock
+    (pkgs.swaylock-fancy.overrideAttrs (old: {
+      postPatch = ''
+        substituteInPlace ${old}/bin/fancy-lock \
+          --replace "convert" "magick convert"
+      '';
+    }))
+
 			waybar
 			htop
 			wlroots
