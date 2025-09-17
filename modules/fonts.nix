@@ -4,11 +4,14 @@
 
 let
   # Fetch your GitHub repo with fonts
-  fontRepo = /home/gilli/.local/share/OhSoManyFonts/usr/share/fonts;
-
+  fontRepo = pkgs.fetchFromGithub {
+	owner = "creep1g";
+	repo = "OhSoManyFonts";
+	rev = "803e0bf21d421b5d5f372493585a212c0c227bc4";
+	sha256 = "0000000000000000000000000000000000000000000000000000";
+	};
   # Package that installs fonts to Nix store
   myFonts = pkgs.runCommand "my-fonts" {} ''
-    mkdir -p $out/share/fonts/truetype/myfonts
     cp ${fontRepo}/* $out/share/fonts/
   '';
 in
