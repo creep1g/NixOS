@@ -115,6 +115,7 @@ users.users.gilli = {
 			fish
 			kitty
 			neovim # Need to get nightly
+			emacs
 			gcc
 			gedit
 			rofi
