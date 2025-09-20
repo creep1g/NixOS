@@ -143,7 +143,7 @@ users.users.gilli = {
 			#python3
 			python313Full
 			python313Packages.pip
-			python313Packages.pgi
+			#python313Packages.pgi
 
 			# Desktop extras
 			blueberry
