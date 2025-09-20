@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	boot.kernelPackages = pkgs.linuxPackgaes_zen;
+	boot.kernelPackages = pkgs.linuxPackages_zen;
 } 
