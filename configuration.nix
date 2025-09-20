@@ -140,10 +140,8 @@ users.users.gilli = {
 			nodejs
 			bun
 			jdk
-			#python3
-			python313Full
+			python3
 			python313Packages.pip
-			#python313Packages.pgi
 
 			# Desktop extras
 			blueberry
