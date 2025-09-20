@@ -2,6 +2,7 @@
 { ... }:
 {
 	imports = [
-	./desktop/hyprland/hyprland.nix
+	  ./desktop/hyprland/hyprland.nix
+	  ./desktop/sddm.nix
 	];
 }

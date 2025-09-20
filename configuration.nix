@@ -10,8 +10,8 @@
   # My services :)
   services.spice-vdagentd.enable = true;
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-	services.displayManager.sddm.theme = "sddm-sugar-dark";
+  #services.displayManager.sddm.enable = true;
+#	services.displayManager.sddm.theme = "sddm-sugar-dark";
 	hardware.bluetooth.enable = true;
 	services.blueman.enable = true;
 
@@ -111,7 +111,6 @@ users.users.gilli = {
 			xdg-desktop-portal-wlr
 			inotify-tools
 			xdg-desktop-portal
-			kdePackages.sddm
 			fish
 			kitty
 			neovim # Need to get nightly
