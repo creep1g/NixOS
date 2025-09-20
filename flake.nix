@@ -27,15 +27,15 @@
 				modules = [
 					./configuration.nix
 					./modules/modules.nix
-					home-manager.nixosModules.home-manager
-					{
-						home-manager.useGlobalPkgs = true;
-						home-manager.useUserPackages = true;
-						home-manager.users.gilli = { ... }: {
-							imports = [ ./home.nix ];
-							_module.args.dotfiles = dotfiles;
-						};
-					}
+					#home-manager.nixosModules.home-manager
+					#{
+					#	home-manager.useGlobalPkgs = true;
+					#	home-manager.useUserPackages = true;
+					#	home-manager.users.gilli = { ... }: {
+					#		imports = [ ./home.nix ];
+					#		_module.args.dotfiles = dotfiles;
+					#	};
+					#}
 				];
 			};
 		};
