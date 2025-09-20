@@ -3,7 +3,7 @@
 {
 	imports = [
 	./core/bootloader.nix
-	./core/kernel.nix
+	#./core/kernel.nix
 	./keyboard.nix
 	#./nvim/config.nix
 	./desktop/sddm.nix
