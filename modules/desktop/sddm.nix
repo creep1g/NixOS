@@ -6,7 +6,7 @@
 
 	environment.systemPackages = with pkgs; [
 		kdePackages.sddm
-		elegant-sddm-unstable
+		elegant-sddm
 	];
 
 }
