@@ -27,6 +27,7 @@
 				modules = [
 					./configuration.nix
 					./modules/modules.nix
+					./modules/desktop.nix
 					#home-manager.nixosModules.home-manager
 					#{
 					#	home-manager.useGlobalPkgs = true;
