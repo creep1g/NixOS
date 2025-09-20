@@ -4,6 +4,7 @@
 	imports = [
 	./keyboard.nix
 	#./nvim/config.nix
+	./desktop/sddm.nix
 	./fonts.nix
 	];
 }

@@ -3,6 +3,5 @@
 {
 	imports = [
 	  ./desktop/hyprland/hyprland.nix
-	  ./desktop/sddm.nix
 	];
 }
