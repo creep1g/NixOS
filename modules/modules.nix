@@ -3,7 +3,7 @@
 {
 	imports = [
 	./keyboard.nix
-	./nvim/config.nix
+	#./nvim/config.nix
 	./fonts.nix
 	];
 }
