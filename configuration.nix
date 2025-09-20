@@ -119,7 +119,6 @@ users.users.gilli = {
 			gcc
 			gedit
 			rofi
-			pywal
 			ranger
 			playerctl # do i need this?
 			pavucontrol
