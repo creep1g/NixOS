@@ -141,8 +141,9 @@ users.users.gilli = {
 			bun
 			jdk
 			python3
-			python311Packages.pip
-			python311Packages.pgi
+			python313Full
+			python313Packages.pip
+			python313Packages.pgi
 
 			# Desktop extras
 			blueberry
