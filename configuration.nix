@@ -140,7 +140,8 @@ users.users.gilli = {
 			nodejs
 			bun
 			jdk
-			python3
+			#python3
+			python313Full
 			python313Packages.pip
 			python313Packages.pgi
 
