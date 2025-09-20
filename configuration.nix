@@ -142,7 +142,7 @@ users.users.gilli = {
 			jdk
 			python3
 			python311Packages.pip
-			python311Packages.gi
+			python311Packages.pgi
 
 			# Desktop extras
 			blueberry
