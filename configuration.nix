@@ -140,7 +140,9 @@ users.users.gilli = {
 			nodejs
 			bun
 			jdk
+			killall
 			python3
+			
 			python313Packages.pip
 
 			# Desktop extras
