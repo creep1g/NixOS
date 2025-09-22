@@ -93,7 +93,6 @@ users.users.gilli = {
 };
 
 
-
 # List packages installed in system profile. To search, run:
 # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -101,6 +100,7 @@ users.users.gilli = {
 	    # Core desktop / Hyprland
 			hyprland
 			hyprcursor
+			bibata-cursors
 			hyprpaper
 			wayland
 			swww
