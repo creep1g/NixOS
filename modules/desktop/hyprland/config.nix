@@ -13,10 +13,10 @@
       "$mainMod" = "CTRL";
 
       monitor = [
-        "eDP-1, 1920x1200, 1920x2160,1"
-        "DP-1, 5120x2160, 0x0, 1"
+        #"eDP-1, 1920x1200, 1920x2160,1"
+        #"DP-1, 5120x2160, 0x0, 1"
 	
-	"Virtual-1,1920x1080,  0x0, 1"
+	    "Virtual-1,1920x1080,  0x0, 1"
       ];
 
       bindl = [
@@ -37,7 +37,7 @@
       ];
 
       exec-once = [
-	"hyprctl setcursor Bibata-Modern-Classic 24"
+	    "hyprctl setcursor Bibata-Modern-Classic 24"
         "$scripts/initWallpaper"
         "$scripts/initWaybar"
         "$scripts/xdgdesktop"
@@ -136,7 +136,7 @@
         "$mainMod, RETURN, exec, kitty"
         "$mainMod SHIFT, RETURN, exec, kitty ranger"
         "$mainMod, S, togglefloating"
-        "$mainMod CTRL, SPACE, exec, .config/rofi/scripts/websearch"
+        #"$mainMod CTRL, SPACE, exec, .config/rofi/scripts/websearch"
         "$mainMod, SPACE, exec, .config/rofi/scripts/launcher"
         "$mainMod, F, fullscreen"
         "$mainMod, Q, killactive"
