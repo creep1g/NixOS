@@ -54,7 +54,7 @@
 
       xwayland = {
         force_zero_scaling = true;
-      };.
+      };
       input = {
         kb_layout = "custom";
         kb_variant = "dvorak";
