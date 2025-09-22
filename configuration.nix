@@ -11,7 +11,6 @@
   services.spice-vdagentd.enable = true;
   services.xserver.enable = true;
   services.xwayland.enable = true;
-  programs.xdg-desktop-portal-wlr.enable = true;
 
   #services.displayManager.sddm.enable = true;
 #	services.displayManager.sddm.theme = "sddm-sugar-dark";
@@ -23,6 +22,7 @@
 	enable = true;
 };
 
+xdg.portal.enable = true;
 # Bootloader.
 #  boot.loader.grub.enable = true;
 #  boot.loader.grub.device = "/dev/sda";
