@@ -15,7 +15,8 @@
       monitor = [
         "eDP-1, 1920x1200, 1920x2160,1"
         "DP-1, 5120x2160, 0x0, 1"
-	"Virtual-1, 0x0, 1"
+	
+	"Virtual-1,1920x1080,  0x0, 1"
       ];
 
       bindl = [
@@ -158,16 +159,17 @@
 	"$mainMod SHIFT, 8, movetoworkspace, 8"
 	"$mainMod SHIFT, 9, movetoworkspace, 9"
 	"$mainMod SHIFT, 0, movetoworkspace, 10"
-	"$mainMod CTRL, 1, movetoworkspacesilent, 1"
-	"$mainMod CTRL, 2, movetoworkspacesilent, 2"
-	"$mainMod CTRL, 3, movetoworkspacesilent, 3"
-	"$mainMod CTRL, 4, movetoworkspacesilent, 4"
-	"$mainMod CTRL, 5, movetoworkspacesilent, 5"
-	"$mainMod CTRL, 6, movetoworkspacesilent, 6"
-	"$mainMod CTRL, 7, movetoworkspacesilent, 7"
-	"$mainMod CTRL, 8, movetoworkspacesilent, 8"
-	"$mainMod CTRL, 9, movetoworkspacesilent, 9"
-	"$mainMod CTRL, 0, movetoworkspacesilent, 10"
+	# Commented to avoid issues on VM
+	#"$mainMod CTRL, 1, movetoworkspacesilent, 1"
+	#"$mainMod CTRL, 2, movetoworkspacesilent, 2"
+	#"$mainMod CTRL, 3, movetoworkspacesilent, 3"
+	#"$mainMod CTRL, 4, movetoworkspacesilent, 4"
+	#"$mainMod CTRL, 5, movetoworkspacesilent, 5"
+	#"$mainMod CTRL, 6, movetoworkspacesilent, 6"
+	#"$mainMod CTRL, 7, movetoworkspacesilent, 7"
+	#"$mainMod CTRL, 8, movetoworkspacesilent, 8"
+	#"$mainMod CTRL, 9, movetoworkspacesilent, 9"
+	#"$mainMod CTRL, 0, movetoworkspacesilent, 10"
 	", Print, exec, $scripts/screenshot --area"
 
 	"$mainMod, Print, exec, $scripts/screenshot --now"
