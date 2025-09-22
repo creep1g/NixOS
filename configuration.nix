@@ -121,6 +121,7 @@ users.users.gilli = {
 			xdg-desktop-portal-wlr
 			inotify-tools
 			glib
+			gsettings-desktop-schemas
 			xdg-desktop-portal
 			fish
 			kitty
