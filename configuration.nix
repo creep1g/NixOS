@@ -120,6 +120,7 @@ users.users.gilli = {
 			gedit
 			rofi
 			ranger
+			libnotify
 			playerctl # do i need this?
 			pavucontrol
 			pamixer
