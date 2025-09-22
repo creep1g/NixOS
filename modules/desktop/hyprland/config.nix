@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-   swayland.windowManager.hyprland = {
+   wayland.windowManager.hyprland = {
 
     settings = {
       # Variables
