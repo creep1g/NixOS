@@ -11,7 +11,6 @@
   services.spice-vdagentd.enable = true;
   services.xserver.enable = true;
   services.xwayland.enable = true;
-  programs.xdg-desktop-portal-hyprland.enable = true;
   programs.xdg-desktop-portal-wlr.enable = true;
 
   #services.displayManager.sddm.enable = true;
