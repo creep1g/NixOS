@@ -120,6 +120,7 @@ users.users.gilli = {
 			unzip
 			xdg-desktop-portal-wlr
 			inotify-tools
+			glib
 			xdg-desktop-portal
 			fish
 			kitty
