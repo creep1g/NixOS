@@ -133,6 +133,8 @@ users.users.gilli = {
 			ranger
 			libnotify
 			playerctl # do i need this?
+			gtk3
+			gtk4
 			mako
 			pavucontrol
 			pamixer
