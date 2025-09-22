@@ -135,6 +135,7 @@ users.users.gilli = {
 			playerctl # do i need this?
 			gtk3
 			gtk4
+			gimp3-with-plugins
 			mako
 			pavucontrol
 			pamixer
