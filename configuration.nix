@@ -117,6 +117,7 @@ users.users.gilli = {
 			htop
 			wlroots
 			bash
+			unzip
 			xdg-desktop-portal-wlr
 			inotify-tools
 			xdg-desktop-portal
