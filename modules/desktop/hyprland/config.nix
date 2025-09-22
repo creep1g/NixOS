@@ -9,12 +9,13 @@
 
     settings = {
       # Variables
-      "$scripts" = ".config/hypr/scripts";
+      "$scripts" = "$HOME/Dotfiles/.config/hypr/scripts";
       "$mainMod" = "CTRL";
 
       monitor = [
         "eDP-1, 1920x1200, 1920x2160,1"
         "DP-1, 5120x2160, 0x0, 1"
+	"Virtual-1, 0x0, 1"
       ];
 
       bindl = [
@@ -48,12 +49,12 @@
 
       env = [
         "XCURSOR_SIZE,18"
+	"XCURSOR_THEME,Thono"
       ];
 
       xwayland = {
         force_zero_scaling = true;
-      };
-
+      };.
       input = {
         kb_layout = "custom";
         kb_variant = "dvorak";
@@ -68,8 +69,8 @@
         gaps_in = 5;
         gaps_out = 6;
         border_size = 3;
-        col.active_border = "$color11 rgba(59595900) $color14 45deg";
-        col.inactive_border = "rgba(59595900)";
+        "col.active_border" = "$color11 rgba(59595900) $color14 45deg";
+        "col.inactive_border" = "rgba(59595900)";
         layout = "dwindle";
       };
 
@@ -140,12 +141,49 @@
         "$mainMod, T, exec, urxvt"
         "$mainMod, W, exec, .config/rofi/scripts/wallpaper"
         "$mainMod SHIFT, W, exec, .config/waybar/scripts/wallpaper.sh"
+	
+	"$mainMod, left, movefocus, l"
+	"$mainMod, right, movefocus, r"
+	"$mainMod, up, movefocus, u"
+	"$mainMod, down, movefocus, d"
+	
+
+	"$mainMod SHIFT, 1, movetoworkspace, 1"
+	"$mainMod SHIFT, 2, movetoworkspace, 2"
+	"$mainMod SHIFT, 3, movetoworkspace, 3"
+	"$mainMod SHIFT, 4, movetoworkspace, 4"
+	"$mainMod SHIFT, 5, movetoworkspace, 5"
+	"$mainMod SHIFT, 6, movetoworkspace, 6"
+	"$mainMod SHIFT, 7, movetoworkspace, 7"
+	"$mainMod SHIFT, 8, movetoworkspace, 8"
+	"$mainMod SHIFT, 9, movetoworkspace, 9"
+	"$mainMod SHIFT, 0, movetoworkspace, 10"
+	"$mainMod CTRL, 1, movetoworkspacesilent, 1"
+	"$mainMod CTRL, 2, movetoworkspacesilent, 2"
+	"$mainMod CTRL, 3, movetoworkspacesilent, 3"
+	"$mainMod CTRL, 4, movetoworkspacesilent, 4"
+	"$mainMod CTRL, 5, movetoworkspacesilent, 5"
+	"$mainMod CTRL, 6, movetoworkspacesilent, 6"
+	"$mainMod CTRL, 7, movetoworkspacesilent, 7"
+	"$mainMod CTRL, 8, movetoworkspacesilent, 8"
+	"$mainMod CTRL, 9, movetoworkspacesilent, 9"
+	"$mainMod CTRL, 0, movetoworkspacesilent, 10"
+	", Print, exec, $scripts/screenshot --area"
+
+	"$mainMod, Print, exec, $scripts/screenshot --now"
+	", xf86monbrightnessup, exec, $scripts/brightness --inc"
+	", xf86monbrightnessdown, exec, $scripts/brightness --dec"
+	", xf86audioraisevolume, exec, $scripts/volume --inc"
+	", xf86audiolowervolume, exec, $scripts/volume --dec"
+
+
       ];
+
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
-      ];
+	      ];
 
       windowrulev2 = [
         "workspace 2, class:^(code)$"
