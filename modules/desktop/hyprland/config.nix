@@ -37,6 +37,7 @@
       ];
 
       exec-once = [
+	"hyprctl setcursor Bibata-Modern-Classic 24"
         "$scripts/initWallpaper"
         "$scripts/initWaybar"
         "$scripts/xdgdesktop"
