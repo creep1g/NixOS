@@ -15,7 +15,7 @@
 	};
 
 
-	outputs = { self, nixpkgs, home-manager, dotfiles, ... }: 
+	outputs = { self, nixpkgs, home-manager, dotfiles, hyprland, ... }: 
 		let 
 			system = "x86_64-linux";
 			pkgs = import nixpkgs { inherit system; };
@@ -32,7 +32,7 @@
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
 						home-manager.users.gilli = { ... }: {
-							imports = [ ./home.nix ];
+						imports = [ ./home.nix ];
 						_module.args.dotfiles = dotfiles;
 				    		_module.args.hyprland = hyprland; # Pass the input
 
