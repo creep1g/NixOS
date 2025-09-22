@@ -118,10 +118,10 @@
         always_keep_position = true;
       };
 
-      device."elecom-trackball-mouse-huge-trackball-1" = {
-        scroll_button = 12;
-        scroll_method = "continuous";
-      };
+      #device."elecom-trackball-mouse-huge-trackball-1" = {
+      #  scroll_button = 12;
+      #  scroll_method = "continuous";
+      #};
 
       misc = {
         disable_hyprland_logo = true;
