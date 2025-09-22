@@ -2,6 +2,10 @@
 
 {
    wayland.windowManager.hyprland = {
+    enable = true;
+    # Use the hyprland package from the flake input
+    package = hyprland.packages.${pkgs.system}.hyprland;
+
 
     settings = {
       # Variables
