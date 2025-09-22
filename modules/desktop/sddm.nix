@@ -10,7 +10,7 @@
 	services.displayManager.sddm ={
 		enable = true;
 	        theme = "chili";
-	}
+	};
 
 
 
