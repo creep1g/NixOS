@@ -33,8 +33,8 @@
 						home-manager.useUserPackages = true;
 						home-manager.users.gilli = { ... }: {
 							imports = [ ./home.nix ];
-							_module.args.dotfiles = dotfiles;
-				    	_module.args.hyprland = inputs.hyprland; # Pass the input
+						_module.args.dotfiles = dotfiles;
+				    		_module.args.hyprland = hyprland; # Pass the input
 
 						};
 					}
