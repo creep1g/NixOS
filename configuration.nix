@@ -12,7 +12,7 @@
   services.xserver.enable = true;
   services.xwayland.enable = true;
   programs.xdg-desktop-portal-hyprland.enable = true;
-  programs.xdg-desktop-portal.enable = true;
+  programs.xdg-desktop-portal-wlr.enable = true;
 
   #services.displayManager.sddm.enable = true;
 #	services.displayManager.sddm.theme = "sddm-sugar-dark";
