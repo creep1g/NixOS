@@ -9,7 +9,7 @@
 
 	services.displayManager.sddm ={
 		enable = true;
-	        theme = "chili";
+	        theme = "${pkgs.ssddm-chilii-theme}/share/sddm/themes/chili";
 	};
 
 
