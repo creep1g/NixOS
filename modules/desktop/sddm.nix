@@ -7,9 +7,9 @@
 		elegant-sddm
 	];
 
-	services.xserver.displayManager.sddm ={
+	services.displayManager.sddm ={
 		enable = true;
-	        theme = "chilio";
+	        theme = "chili";
 	};
 
 
