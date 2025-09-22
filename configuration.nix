@@ -10,10 +10,14 @@
   # My services :)
   services.spice-vdagentd.enable = true;
   services.xserver.enable = true;
+  services.xwayland.enable = true;
+  programs.xdg-desktop-portal-hyprland.enable = true;
+  programs.xdg-desktop-portal.enable = true;
+
   #services.displayManager.sddm.enable = true;
 #	services.displayManager.sddm.theme = "sddm-sugar-dark";
-	hardware.bluetooth.enable = true;
-	services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # My programs
   programs.hyprland = {
