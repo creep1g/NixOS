@@ -112,6 +112,7 @@ users.users.gilli = {
 			waybar
 			sway
 			xwayland
+			material-cursor
 			htop
 			wlroots
 			bash
