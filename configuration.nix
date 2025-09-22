@@ -122,6 +122,7 @@ users.users.gilli = {
 			ranger
 			libnotify
 			playerctl # do i need this?
+			mako
 			pavucontrol
 			pamixer
 			brightnessctl
