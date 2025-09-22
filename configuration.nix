@@ -10,7 +10,7 @@
   # My services :)
   services.spice-vdagentd.enable = true;
   services.xserver.enable = true;
-  services.xwayland.enable = true;
+  programs.xwayland.enable = true;
 
   #services.displayManager.sddm.enable = true;
 #	services.displayManager.sddm.theme = "sddm-sugar-dark";
@@ -110,6 +110,8 @@ users.users.gilli = {
 			swaylock
 			swaylock-fancy
 			waybar
+			sway
+			xwayland
 			htop
 			wlroots
 			bash
