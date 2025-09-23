@@ -33,9 +33,9 @@ in
         #package = pkgs.kdePackages.sddm;
         extraPackages = with pkgs; [
             #(sddm-astronaut.override { embeddedTheme = "black_hole"; })
-            kdePackages.qtsvg
-            kdePackages.qtmultimedia
-            kdePackages.qtvirtualkeyboard
+            #kdePackages.qtsvg
+            #kdePackages.qtmultimedia
+            #kdePackages.qtvirtualkeyboard
         ];
         theme = "simple-sddm-theme";
     };
