@@ -1,11 +1,11 @@
 { config, pkgs, ... }: 
 {
 
-   environment.systemPackages = with pkgs; [
-       kdePackages.sddm
-       sddm-chili-theme
-       elegant-sddm
-
+    environment.systemPackages = with pkgs; [
+        kdePackages.sddm
+        sddm-chili-theme
+        elegant-sddm
+        qtgraphicaleffects
     ];
 
     services.displayManager.sddm ={
@@ -15,7 +15,6 @@
         extraPackages = with pkgs; [
             (sddm-astronaut.override { embeddedTheme = "black_hole"; })
             kdePackages.qtsvg
-            kdePackages.qtgraphicaleffects
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
         ];
