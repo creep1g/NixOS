@@ -3,8 +3,10 @@
 
    environment.systemPackages = with pkgs; [
        kdePackages.sddm
-    #   sddm-chili-theme
-    #   elegant-sddm
+       sddm-chili-theme
+       elegant-sddm
+       sddm-astronaut-theme
+
     ];
 
     services.displayManager.sddm ={
