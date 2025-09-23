@@ -24,9 +24,9 @@ in
     environment.systemPackages = with pkgs; [
         sddm-astronaut
         simple-sddm-theme
-	qt6.qtsvg
-	kdePackages.qtmultimedia
-	qt6.qtvirtualkeyboard
+    qt6.qtsvg
+    kdePackages.qtmultimedia
+    qt6.qtvirtualkeyboard
             
     ];
 
@@ -35,12 +35,19 @@ in
         wayland.enable = true;
         package = pkgs.kdePackages.sddm;
         extraPackages = with pkgs; [
+            sddm-astronaut
+            simple-sddm-theme
             #(sddm-astronaut.override { embeddedTheme = "black_hole"; })
             #kdePackages.qtsvg
             #kdePackages.qtmultimedia
             #kdePackages.qtvirtualkeyboard
         ];
         theme = "simple-sddm-theme";
+        settings = {
+            Theme = {
+                Current = "simple-sddm-theme"
+            };
+        };
     };
 
 
