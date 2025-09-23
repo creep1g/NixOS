@@ -15,6 +15,7 @@
         extraPackages = with pkgs; [
             (sddm-astronaut.override { embeddedTheme = "black_hole"; })
             kdePackages.qtsvg
+            kdePackages.qtgraphicaleffects
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
         ];
