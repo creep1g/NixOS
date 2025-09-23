@@ -5,7 +5,7 @@
         kdePackages.sddm
         sddm-chili-theme
         elegant-sddm
-	qt6.qtgraphicaleffects
+        libsForQt5.qt5.qtquickcontrols
     ];
 
     services.displayManager.sddm ={
@@ -13,12 +13,13 @@
         wayland.enable = true;
         package = pkgs.kdePackages.sddm;
         extraPackages = with pkgs; [
-            (sddm-astronaut.override { embeddedTheme = "black_hole"; })
+            #(sddm-astronaut.override { embeddedTheme = "black_hole"; })
             kdePackages.qtsvg
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
+            kdePackages.qtquickcontrol
         ];
-        theme = "elegant-sddm";
+        theme = "sddm-chili-theme";
     };
 
 
