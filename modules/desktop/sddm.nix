@@ -2,13 +2,9 @@
 {
 
     environment.systemPackages = with pkgs; [
-    #    kdePackages.sddm
-    #    sddm-chili-theme
-    #    elegant-sddm
         sddm-astronaut-theme
             
     ];
-    #services.xserver.desktopManager.plasma5.enable = true;
 
     services.displayManager.sddm ={
        enable = true;
@@ -20,20 +16,11 @@
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
         ];
-        theme = "sddm-chili-theme";
+        theme = "sddm-astronaut-theme";
     };
 
-    # /etc/nixos/configuration.nix
 
     services.xserver.desktopManager.plasma6.enable = true; # Example for Plasma, which is Qt5-based
-
-    # Add the necessary Qt5 packages for your theme
-    environment.systemPackages = with pkgs; [
-        sddm-chili-theme
-        #libsForQt5.qtquickcontrols
-        #libsForQt5.qt5.qtgraphicaleffects
-        # Add other Qt5 dependencies as needed
-    ];
 
 
 }
