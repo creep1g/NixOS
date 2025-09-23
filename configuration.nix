@@ -12,8 +12,6 @@
     services.xserver.enable = true;
     programs.xwayland.enable = true;
 
-#services.displayManager.sddm.enable = true;
-#   services.displayManager.sddm.theme = "sddm-sugar-dark";
     hardware.bluetooth.enable = true;
     services.blueman.enable = true;
 
@@ -23,10 +21,6 @@
     };
 
     xdg.portal.enable = true;
-# Bootloader.
-#  boot.loader.grub.enable = true;
-#  boot.loader.grub.device = "/dev/sda";
-#  boot.loader.grub.useOSProber = true;
 
 # Use latest kernel.
     boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -49,9 +43,6 @@
         LC_TIME = "is_IS.UTF-8";
     };
 
-#  nixpkgs.overlays = [
-#   (import ./overlay-xkb.nix)
-#   ];
 # Configure keymap in X11
     services.xserver.xkb = {
         layout = "custom";
