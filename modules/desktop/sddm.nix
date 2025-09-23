@@ -1,8 +1,31 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, stdenv, fetchFromGitHub, ... }: 
+let
+
+   simple-sddm-theme = stdenv.mkDerivation {
+        pname = "simple-sddm-2";
+        version = "1.0";
+        
+        src = fetchFromGitHub {
+            owner = "creep1g";
+            repo = "simple-sddm-2";
+            rev = "7c9f5af2f7db2bf2fc874c65c45c9dbf81b3e49d";
+            sha256 = lib.fakeSha256;
+        };
+
+        installPhase = ''
+            mkdir -p $out/share/sddm/themes
+            cp -r $src $out/share/sddm/themes/simple-sddm-theme
+        '';
+        
+    };
+in
 {
+
+
 
     environment.systemPackages = with pkgs; [
         sddm-astronaut
+        simple-sddm-theme
             
     ];
 
@@ -16,7 +39,7 @@
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
         ];
-        theme = "sddm-astronaut";
+        theme = "simple-sddm-theme";
     };
 
 
