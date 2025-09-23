@@ -3,7 +3,9 @@
     environment.systemPackages = with pkgs; [
         jxplorer
         (writeShellScriptBin "jxplorer-wrapped" ''
-            exec ${jxplorer}/bin/jxplorer -Djxplorer.config=~/.local/jxplorer "$@"
+            local JXPLORER_DIR="${pkgs.jxplorer.optDir}"
+    
+            exec "$JXPLORER_DIR/jxplorer.sh -Djxplorer.config=$HOME/.local/jxplorer "$@"
         '')
     ];
 
