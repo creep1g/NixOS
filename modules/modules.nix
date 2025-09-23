@@ -2,6 +2,7 @@
 { ... }:
 {
 	imports = [
+	./core/ufw.nix
 	./core/bootloader.nix
 	#./core/kernel.nix
 	./pywal.nix
