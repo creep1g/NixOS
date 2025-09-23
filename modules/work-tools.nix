@@ -4,7 +4,7 @@
         jxplorer
     ];
 
-	pkgs.writeShellScriptBin "jxplorer-wrapped" ''
+	pkgs.writeShellScriptBin "jxplorer-wrapped" = ''
   	    exec ${pkgs.jxplorer}/bin/jxplorer -Djxplorer.config=/path/to/desired/dir "$@"
 	'';
 }
