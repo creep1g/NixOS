@@ -45,7 +45,7 @@ in
         theme = "simple-sddm-theme";
         settings = {
             Theme = {
-                Current = "simple-sddm-theme"
+                Current = "simple-sddm-theme";
             };
         };
     };
