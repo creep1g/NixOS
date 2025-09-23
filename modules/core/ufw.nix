@@ -10,7 +10,7 @@
 		defaultDenyIncoming = true;
 		defaultAllowOutgoing = true;
 		allowForward = false;
-		logging = "low"
+		logging = "low";
 	};
 
 }
