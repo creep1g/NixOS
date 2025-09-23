@@ -1,7 +1,7 @@
 {config, ... }:
 
 {
-    networking.hostname = "nixos"
+    networking.hostname = "nixos";
     networking.wireless.enable = true; 
     networking.networkmanager.enable = true;
 
