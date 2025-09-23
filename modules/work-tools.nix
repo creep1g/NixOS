@@ -3,10 +3,10 @@
     environment.systemPackages = with pkgs; [
         jxplorer
         (writeShellScriptBin "jxplorer-wrapped" ''
-            export DISPLAY="$DISPLAY"
-            export XDG_RUNTIME_DIR="$XDG_RUNTIME_DIR"
+            local JXPLORER_DIR="${pkgs.jxplorer}/opt/jxplorer"
     
-            exec "${pkgs.jxplorer}/opt/jxplorer/jxplorer.sh" "-Djxplorer.config=$HOME/.local/jxplorer" "$@"
+            cd "$JXPLORER_DIR"
+            exec "./jxplorer.sh" "-Djxplorer.config=$HOME/.local/jxplorer" "$@"
         '')
     ];
 
