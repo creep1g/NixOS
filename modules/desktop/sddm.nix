@@ -25,7 +25,7 @@ in
         sddm-astronaut
         simple-sddm-theme
 	qt6.qtsvg
-	qt6.qtmultimedia
+	kdePackages.qt6.qtmultimedia
 	qt6.qtvirtualkeyboard
             
     ];
