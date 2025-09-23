@@ -22,7 +22,6 @@ in
 {
 
     environment.systemPackages = with pkgs; [
-	sddm
         sddm-astronaut
         simple-sddm-theme
 	qt6.qtsvg
@@ -34,7 +33,7 @@ in
     services.displayManager.sddm ={
        enable = true;
         wayland.enable = true;
-        #package = pkgs.kdePackages.sddm;
+        package = pkgs.kdePackages.sddm;
         extraPackages = with pkgs; [
             #(sddm-astronaut.override { embeddedTheme = "black_hole"; })
             #kdePackages.qtsvg
