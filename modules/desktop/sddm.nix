@@ -17,7 +17,6 @@
             kdePackages.qtsvg
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
-            kdePackages.qtquickcontrol
         ];
         theme = "sddm-chili-theme";
     };
