@@ -26,16 +26,15 @@
     services.xserver.desktopManager.plasma6.enable = true; # Example for Plasma, which is Qt5-based
     services.displayManager.sddm = {
         enable = true;
-        # SDDM will now use the Qt5 version
-         package = pkgs.sddm-qt5; 
+         package = pkgs.sddm; 
         theme = "sddm-chili-theme";
     };
 
     # Add the necessary Qt5 packages for your theme
     environment.systemPackages = with pkgs; [
         sddm-chili-theme
-        libsForQt5.qtquickcontrols
-        libsForQt5.qt5.qtgraphicaleffects
+        #libsForQt5.qtquickcontrols
+        #libsForQt5.qt5.qtgraphicaleffects
         # Add other Qt5 dependencies as needed
     ];
 
