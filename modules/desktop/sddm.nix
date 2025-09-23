@@ -5,7 +5,7 @@
         kdePackages.sddm
         sddm-chili-theme
         elegant-sddm
-        libsForQt5.qt5.qtgraphicaleffects
+	qt6.qtgraphicaleffects
     ];
 
     services.displayManager.sddm ={
