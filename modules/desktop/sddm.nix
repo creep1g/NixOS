@@ -1,11 +1,11 @@
-{ config, pkgs, lib, fetchFromGitHub, ... }: 
+{ config, pkgs, lib, ... }: 
 let
 
    simple-sddm-theme = pkgs.stdenv.mkDerivation {
         pname = "simple-sddm-2";
         version = "1.0";
         
-        src = fetchFromGitHub {
+        src = pkgs.fetchFromGitHub {
             owner = "creep1g";
             repo = "simple-sddm-2";
             rev = "7c9f5af2f7db2bf2fc874c65c45c9dbf81b3e49d";
