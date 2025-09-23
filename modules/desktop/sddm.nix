@@ -24,6 +24,9 @@ in
     environment.systemPackages = with pkgs; [
         sddm-astronaut
         simple-sddm-theme
+	qt6.qtsvg
+	qt6.qtmultimedia
+	qt6.qtvirtualkeyboard
             
     ];
 
