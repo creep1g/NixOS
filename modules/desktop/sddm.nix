@@ -9,7 +9,7 @@ let
             owner = "creep1g";
             repo = "simple-sddm-2";
             rev = "a1b3ab76f8f7d2141d1060a0e99ff1f6ef08b45f";
-            sha256 = "TeYFkHFlQF77o5Xjn499uy+e8zU8cB2XajfJ1IwUCp0="; #lib.fakeSha256;
+            sha256 = lib.fakeSha256;
         };
 
         installPhase = ''
@@ -20,8 +20,6 @@ let
     };
 in
 {
-
-
 
     environment.systemPackages = with pkgs; [
         sddm-astronaut
@@ -43,7 +41,7 @@ in
     };
 
 
-    services.xserver.desktopManager.plasma6.enable = true; # Example for Plasma, which is Qt5-based
+    services.desktopManager.plasma6.enable = true; 
 
 
 }
