@@ -2,7 +2,7 @@
 {
 
     environment.systemPackages = with pkgs; [
-        sddm-astronaut-theme
+        sddm-astronaut
             
     ];
 
@@ -16,7 +16,7 @@
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
         ];
-        theme = "sddm-astronaut-theme";
+        theme = "sddm-astronaut";
     };
 
 
