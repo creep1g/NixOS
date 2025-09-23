@@ -3,12 +3,12 @@ let
 
    simple-sddm-theme = pkgs.stdenv.mkDerivation {
         pname = "simple-sddm-2";
-        version = "1.0";
+        version = "2.0";
         
         src = pkgs.fetchFromGitHub {
             owner = "creep1g";
             repo = "simple-sddm-2";
-            rev = "7c9f5af2f7db2bf2fc874c65c45c9dbf81b3e49d";
+            rev = "a1b3ab76f8f7d2141d1060a0e99ff1f6ef08b45f";
             sha256 = "TeYFkHFlQF77o5Xjn499uy+e8zU8cB2XajfJ1IwUCp0="; #lib.fakeSha256;
         };
 
