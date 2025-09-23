@@ -1,4 +1,4 @@
-{ config, pkgs, stdenv, fetchFromGitHub, ... }: 
+{ config, pkgs, stdenv, lib, fetchFromGitHub, ... }: 
 let
 
    simple-sddm-theme = stdenv.mkDerivation {
