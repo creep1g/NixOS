@@ -5,7 +5,6 @@
        kdePackages.sddm
        sddm-chili-theme
        elegant-sddm
-       sddm-astronaut-theme
 
     ];
 
@@ -19,7 +18,7 @@
             kdePackages.qtmultimedia
             kdePackages.qtvirtualkeyboard
         ];
-        theme = "sddm-astronaut-theme";
+        theme = "elegant-sddm";
     };
 
 
