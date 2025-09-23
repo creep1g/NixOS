@@ -22,6 +22,7 @@ in
 {
 
     environment.systemPackages = with pkgs; [
+	sddm
         sddm-astronaut
         simple-sddm-theme
 	qt6.qtsvg
