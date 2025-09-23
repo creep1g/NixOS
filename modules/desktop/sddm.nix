@@ -23,7 +23,7 @@
 
     # /etc/nixos/configuration.nix
 
-    services.xserver.desktopManager.plasma5.enable = true; # Example for Plasma, which is Qt5-based
+    services.xserver.desktopManager.plasma6.enable = true; # Example for Plasma, which is Qt5-based
     services.displayManager.sddm = {
         enable = true;
         # SDDM will now use the Qt5 version
