@@ -9,7 +9,7 @@ let
             owner = "creep1g";
             repo = "simple-sddm-2";
             rev = "7c9f5af2f7db2bf2fc874c65c45c9dbf81b3e49d";
-            sha256 = lib.fakeSha256;
+            sha256 = "TeYFkHFlQF77o5Xjn499uy+e8zU8cB2XajfJ1IwUCp0="; #lib.fakeSha256;
         };
 
         installPhase = ''
