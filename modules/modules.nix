@@ -8,6 +8,7 @@
 	#./core/kernel.nix
 	./pywal.nix
 	./keyboard.nix
+	./work-tools.nix
 	#./nvim/config.nix
 	./desktop/sddm.nix
 
