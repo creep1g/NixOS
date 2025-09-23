@@ -17,10 +17,10 @@
     networking.firewall.checkReversePath = "loose"; # prevent issues with routed traffic
 
     # Optional: extra rules for dropping invalid packets
-    networking.firewall.extraCommands = ''
-        nft add rule inet filter input ct state invalid drop
-        nft add rule inet filter forward drop
-    '';
+#    networking.firewall.extraCommands = ''
+ #       nft add rule inet filter input ct state invalid drop
+  #      nft add rule inet filter forward drop
+  #  '';
         
 
 }
