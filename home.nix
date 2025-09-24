@@ -49,7 +49,7 @@
 
     programs.doom-emacs = {
     	enable = true;
-	doomDir = ${config.home.homeDirectory}/.config/doom;
+	doomDir = "${config.home.homeDirectory}/.config/doom";
 	package = pkgs.emacs;
 	
     };
