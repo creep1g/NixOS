@@ -10,10 +10,10 @@
     settings = {
       # Variables
       "$scripts" = "$HOME/Dotfiles/.config/hypr/scripts";
-      "$mainMod" = "CTRL";
+      "$mainMod" = "Mod5";
 
       monitor = [
-        #"eDP-1, 1920x1200, 1920x2160,1"
+        "eDP-1, 1920x1200, 1920x2160,1"
         #"DP-1, 5120x2160, 0x0, 1"
 	
 	    "Virtual-1,1920x1080,  0x0, 1"
@@ -29,11 +29,11 @@
         "3,monitor:eDP-1"
         "4,monitor:eDP-1"
         "5,monitor:eDP-1"
-        "6,monitor:DP-1, layout:master"
-        "7,monitor:DP-1, layout:master"
-        "8,monitor:DP-1, layout:master"
-        "9,monitor:DP-1, layout:master"
-        "10,monitor:DP-1, layout:master"
+        #"6,monitor:DP-1, layout:master"
+        #"7,monitor:DP-1, layout:master"
+        #"8,monitor:DP-1, layout:master"
+        #"9,monitor:DP-1, layout:master"
+        #"10,monitor:DP-1, layout:master"
       ];
 
       exec-once = [
