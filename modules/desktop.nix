@@ -3,6 +3,5 @@
 {
 	imports = [
 	    ./desktop/hyprland/config.nix
-	    ./desktop/doomemacs.nix
 	    ];
 }

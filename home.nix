@@ -47,13 +47,6 @@
         ./modules/desktop.nix
     ];
 
-    programs.doom-emacs = {
-    	enable = true;
-	doomDir = "${config.home.homeDirectory}/.config/doom";
-	package = pkgs.emacs;
-	
-    };
-
 
     home.stateVersion = "25.05";
 }

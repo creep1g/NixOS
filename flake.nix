@@ -12,9 +12,6 @@
             url = "github:hyprwm/contrib";
             inputs.nixpkgs.follows = "hyprland/nixpkgs";
         };
-
-	nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
-	nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "nixpkgs";
     };
 
 
