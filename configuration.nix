@@ -108,6 +108,8 @@
             kitty
             neovim # Need to get nightly
             emacs
+            emacsPackages.doom
+	    emacsPackages.ewal-doom-themes
             gcc
             gedit
             rofi
