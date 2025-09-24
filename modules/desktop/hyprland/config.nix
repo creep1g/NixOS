@@ -183,7 +183,7 @@
 	"$mainMod CTRL, 8, movetoworkspacesilent, 8"
 	"$mainMod CTRL, 9, movetoworkspacesilent, 9"
 	"$mainMod CTRL, 0, movetoworkspacesilent, 10"
-	, Print, exec, $scripts/screenshot --area"
+	", Print, exec, $scripts/screenshot --area"
 
 	"$mainMod, Print, exec, $scripts/screenshot --now"
 	", xf86monbrightnessup, exec, $scripts/brightness --inc"
