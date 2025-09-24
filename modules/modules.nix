@@ -11,7 +11,7 @@
 	./work-tools.nix
 	#./nvim/config.nix
 	./desktop/sddm.nix
-
+	./destkop/doomemacs.nix
 	./fonts.nix
 	];
 }
