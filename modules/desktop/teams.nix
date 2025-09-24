@@ -3,7 +3,10 @@
 {
   config = let
     teams-for-linux-pywal-wrapper = pkgs.writeShellScriptBin "teams-for-linux" ''
+      # Location of the pywal colors file.
       pywal_json="$HOME/.cache/wal/colors.json"
+      
+      # Location for the teams-for-linux config file and our custom CSS file.
       config_path="$HOME/.config/teams-for-linux/config.json"
       css_path="$HOME/.config/teams-for-linux/pywal-theme.css"
       
@@ -41,23 +44,21 @@
         ' "$pywal_json" > "$css_path"
       fi
       
-      # Step 2: Use jq to update the customCSSLocation in the config.json file.
-      # This handles both cases: a file exists or we need to create one.
-      local updated_json=$(${pkgs.jq}/bin/jq --arg path "$css_path" '
-          . + { customCSSLocation: $path }
-        ' "$config_path")
-      
-      # If jq returns an error (e.g., file not found), create a new JSON object.
-      if [ $? -ne 0 ]; then
-          updated_json=${pkgs.jq}/bin/jq --arg path "$css_path" '
-            { customCSSLocation: $path }
-          ' <<< "{}"
+      # Step 2: Read the existing config file or create an empty JSON object.
+      # This fixes the "Unexpected end of JSON input" error.
+      if [ -f "$config_path" ]; then
+        config_content="$(cat "$config_path")"
+      else
+        config_content="{}"
       fi
       
-      # Write the updated JSON to the config file.
-      echo "$updated_json" > "$config_path"
+      # Step 3: Use a single jq command to update the customCSSLocation.
+      # This is a much more robust and reliable way to edit the JSON.
+      echo "$config_content" | ${pkgs.jq}/bin/jq --arg path "$css_path" '
+          . + { customCSSLocation: $path }
+      ' > "$config_path"
       
-      # Step 3: Launch the application.
+      # Step 4: Launch the application.
       # The app will now read the customCSSLocation from its config file.
       exec ${pkgs.teams-for-linux}/bin/teams-for-linux \
         --enable-features=UseOzonePlatform,WaylandWindowDecorations \
