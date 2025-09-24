@@ -2,6 +2,7 @@
 { ... }:
 {
 	imports = [
-	  ./desktop/hyprland/config.nix
-	];
+	    ./desktop/hyprland/config.nix
+	    ./desktop/doomemacs.nix
+	    ];
 }
