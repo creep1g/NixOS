@@ -4,7 +4,7 @@
 let
   # Define a new, custom package called "teams-for-linux-optimized"
   # This package is a modified version of the standard teams-for-linux package.
-  teams-for-linux-optimized = pkgs.teams-for-linux.overrideAttrs (oldAttrs: {
+  teams-for-linux-wayland-wrapper = pkgs.teams-for-linux.overrideAttrs (oldAttrs: {
     # The `postFixup` phase is where you can add custom wrapping logic to a package.
     # This ensures that the flags are applied every time the binary is executed.
     postFixup = ''
@@ -34,7 +34,7 @@ in
   # Enable OpenGL for graphics acceleration.
   hardware.opengl.enable = true;
   environment.systemPackages = with pkgs; [
-  			     teams-for-linux-optimized
+  			     teams-for-linux-wayland-wrapper
 	];
 
   
