@@ -12,5 +12,6 @@
 	#./nvim/config.nix
 	./desktop/sddm.nix
 	./fonts.nix
+	./desktop/teams.nix
 	];
 }
