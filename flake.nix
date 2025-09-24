@@ -6,12 +6,15 @@
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         dotfiles.url = "github:creep1g/NixOS-Dotfiles"; # Repo
-         hyprland.url = "github:hyprwm/Hyprland";
+        hyprland.url = "github:hyprwm/Hyprland";
 
         hypr-contrib = {
             url = "github:hyprwm/contrib";
             inputs.nixpkgs.follows = "hyprland/nixpkgs";
         };
+
+	nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+	nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "nixpkgs";
     };
 
 
