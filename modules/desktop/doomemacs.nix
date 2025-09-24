@@ -4,7 +4,7 @@
     environment.systemPackages = with pkgs; [
         emacs
         emacsPackages.doom
-        emacPackages.ewal-doom-themes    
+        emacsPackages.ewal-doom-themes    
     ];
 }
 
