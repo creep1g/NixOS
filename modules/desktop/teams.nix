@@ -4,12 +4,12 @@
 let
   # Define a new, custom package called "teams-for-linux-optimized"
   # This package is a modified version of the standard teams-for-linux package.
-  teams-for-linux-wayland-wrapper = pkgs.teams-for-linux.overrideAttrs (oldAttrs: {
+  tfl = pkgs.teams-for-linux.overrideAttrs (oldAttrs: {
     # The `postFixup` phase is where you can add custom wrapping logic to a package.
     # This ensures that the flags are applied every time the binary is executed.
     postFixup = ''
       # The wrapProgram utility adds flags to the executable script.
-      wrapProgram $out/bin/teams \
+      wrapProgram $out/bin/teams-for-linux \
         --add-flags "--enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
     '';
   });
@@ -34,7 +34,7 @@ in
   # Enable OpenGL for graphics acceleration.
   hardware.opengl.enable = true;
   environment.systemPackages = with pkgs; [
-  			     teams-for-linux-wayland-wrapper
+  			     tfl
 	];
 
   
