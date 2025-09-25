@@ -11,6 +11,7 @@
 	./work-tools.nix
 	#./nvim/config.nix
 	./desktop/sddm.nix
+    ./desktop/input.nix
 	./fonts.nix
 	./desktop/teams.nix
 	];
