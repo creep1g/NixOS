@@ -88,8 +88,8 @@
             hyprpaper
             wayland
             swww
-            swaylock
             swaylock-fancy
+            swaylock-effects
             waybar
             sway
             xwayland
