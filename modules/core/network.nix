@@ -12,7 +12,9 @@
         allowedUDPPorts = [];         # No incoming UDP allowed
         allowPing = true;             # optional, set to false to block ping
     };
-
+    environment.systemPackages = with pkgs; [
+    			       networkmanagerapplet
+    ]; 
     # Explicit defaults (already match UFW defaults you want)
     networking.firewall.checkReversePath = "loose"; # prevent issues with routed traffic
 
