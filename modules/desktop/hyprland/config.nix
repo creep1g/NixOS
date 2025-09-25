@@ -41,6 +41,7 @@
         "$scripts/xdgdesktop"
         "$scripts/gtkthemes"
         "/usr/lib/polkit-kde-authentication-agent-1"
+        "libinput-gestures"
       ];
 
       source = [
