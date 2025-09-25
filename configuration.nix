@@ -15,7 +15,7 @@
     hardware.bluetooth.enable = true;
     services.blueman.enable = true;
 
-    services.libinput.enable = true
+    services.libinput.enable = true;
 # My programs
     programs.hyprland = {
         enable = true;
