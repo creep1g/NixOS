@@ -15,6 +15,7 @@
     hardware.bluetooth.enable = true;
     services.blueman.enable = true;
 
+    services.libinput.enable = true
 # My programs
     programs.hyprland = {
         enable = true;
@@ -56,7 +57,7 @@
     users.users.gilli = {
         isNormalUser = true;
         description = "gilli";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "input"];
         packages = with pkgs; [];
     };
 
@@ -101,6 +102,9 @@
             unzip
             xdg-desktop-portal-wlr
             libinput-gestures
+            wmctrl # Useful for some commands, but you can also use hyprctl
+            xdotool  # Used to simulate keystrokes
+            ydotool
             inotify-tools
             glib
             gsettings-desktop-schemas
