@@ -100,6 +100,7 @@
             bash
             unzip
             xdg-desktop-portal-wlr
+            libinput-gestures
             inotify-tools
             glib
             gsettings-desktop-schemas
