@@ -1,6 +1,9 @@
 {config, pkgs, ... }:
 
 {
+    environment.systemPackages = with pkgs; [
+                               openconnect
+    ];
     networking.hostName = "nixos";
     #networking.wireless.enable = true;
     networking.networkmanager.enable = true;
