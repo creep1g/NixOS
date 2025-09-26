@@ -76,7 +76,6 @@
     users.users.gilli = {
         shell = pkgs.fish;
     };
-  services.network-manager-openconnect.enable = true;
 
 
 # List packages installed in system profile. To search, run:
@@ -102,6 +101,7 @@
             bash
             unzip
             openconnect
+            openconnect-sso
             xdg-desktop-portal-wlr
             libinput-gestures
             wmctrl # Useful for some commands, but you can also use hyprctl
