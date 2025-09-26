@@ -159,6 +159,7 @@
             vlc
             discord
             betterdiscord-installer
+            betterdiscordctl
             vscode
             wget
             git
