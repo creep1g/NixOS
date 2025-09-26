@@ -2,8 +2,10 @@
 
 {
     networking.hostName = "nixos";
-    #networking.wireless.enable = true; 
+    #networking.wireless.enable = true;
     networking.networkmanager.enable = true;
+    services.network-manager-openconnect.enable = true;
+
 
     networking.firewall = {
         enable = true;                # firewall on
