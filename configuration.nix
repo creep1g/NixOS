@@ -101,7 +101,7 @@
             bash
             unzip
             openconnect
-            openconnect-sso
+            gpclient
             xdg-desktop-portal-wlr
             libinput-gestures
             wmctrl # Useful for some commands, but you can also use hyprctl
