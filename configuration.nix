@@ -76,6 +76,7 @@
     users.users.gilli = {
         shell = pkgs.fish;
     };
+  services.network-manager-openconnect.enable = true;
 
 
 # List packages installed in system profile. To search, run:
