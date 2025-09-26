@@ -158,6 +158,7 @@
             obs-studio
             vlc
             discord
+            betterdiscord-installer
             vscode
             wget
             git
