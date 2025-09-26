@@ -100,6 +100,7 @@
             wlroots
             bash
             unzip
+            openconnect
             xdg-desktop-portal-wlr
             libinput-gestures
             wmctrl # Useful for some commands, but you can also use hyprctl
