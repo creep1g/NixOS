@@ -85,6 +85,7 @@
 # Core desktop / Hyprland
         hyprland
             hyprcursor
+            spotify-tui
             brave
             bibata-cursors
             hyprpaper
