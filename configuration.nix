@@ -100,6 +100,7 @@
             wlroots
             bash
             unzip
+            cmatrix
             openconnect
             gpclient
             xdg-desktop-portal-wlr
@@ -158,7 +159,6 @@
             obs-studio
             vlc
             discord
-            betterdiscord-installer
             betterdiscordctl
             vscode
             wget
