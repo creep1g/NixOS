@@ -85,6 +85,7 @@
 # Core desktop / Hyprland
         hyprland
             hyprcursor
+            spicetify-cli
             spotify
             brave
             bibata-cursors
