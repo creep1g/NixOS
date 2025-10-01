@@ -62,11 +62,12 @@
         follow_mouse = 1;
         sensitivity = 0;
         touchpad.natural_scroll = true;
-        device:ELECOM TrackBall Mouse HUGE TrackBall {
+
+      };
+      device:ELECOM TrackBall Mouse HUGE TrackBall {
             scroll_method=on_button_down
             scroll_button=BTN_TASK
-        }
-      };
+        };
 
       cursor.no_hardware_cursors = true;
 
