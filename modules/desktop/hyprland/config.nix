@@ -62,7 +62,6 @@
         follow_mouse = 1;
         sensitivity = 0;
         touchpad.natural_scroll = true;
-        input {
         device:ELECOM TrackBall Mouse HUGE TrackBall {
             scroll_method=on_button_down
             scroll_button=BTN_TASK
