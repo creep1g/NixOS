@@ -61,9 +61,10 @@
         kb_variant = "dvorak";
         follow_mouse = 1;
         sensitivity = 0;
+        scroll_method = "on_button_down";
+        scroll_button = "mouse:279"
 
       };
-      
       cursor.no_hardware_cursors = true;
 
       general = {
@@ -217,14 +218,6 @@
         "opacity 1, xwayland 1, class:^(Apache Directory Studio)$"
       ];
     };
-      extraConfig = ''
-    input {
-        device:ELECOM TrackBall Mouse HUGE TrackBall {
-            scroll_method = on_button_down
-            scroll_button = BTN_TASK
-        }
-    }
-  '';
   };
 }
 
