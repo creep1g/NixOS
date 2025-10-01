@@ -62,7 +62,7 @@
         follow_mouse = 1;
         sensitivity = 0;
         scroll_method = "on_button_down";
-        scroll_button = "mouse:279";
+        scroll_button = "279";
 
       };
       cursor.no_hardware_cursors = true;
