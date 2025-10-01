@@ -108,6 +108,7 @@
             gpclient
             xdg-desktop-portal-wlr
             libinput-gestures
+            libinput
             wmctrl # Useful for some commands, but you can also use hyprctl
             xdotool  # Used to simulate keystrokes
             ydotool
