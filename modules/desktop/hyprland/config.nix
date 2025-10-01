@@ -64,7 +64,7 @@
         touchpad.natural_scroll = true;
         
 
-        "ELECOM TrackBall Mouse HUGE TrackBall" = {
+        device:ELECOM TrackBall Mouse HUGE TrackBall = {
             scroll_method = "on_button_down";
             scroll_button = "BTN_TASK";
         };
