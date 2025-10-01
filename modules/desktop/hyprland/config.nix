@@ -63,14 +63,7 @@
         sensitivity = 0;
 
       };
-      extraConfig = ''
-        input {
-          device:ELECOM TrackBall Mouse HUGE TrackBall {
-            scroll_method = on_button_down
-            scroll_button = BTN_TASK
-            }
-          }
-        '';
+
       cursor.no_hardware_cursors = true;
 
       general = {
@@ -225,5 +218,13 @@
       ];
     };
   };
+    extraConfig = ''
+    input {
+        device:ELECOM TrackBall Mouse HUGE TrackBall {
+            scroll_method = on_button_down
+            scroll_button = BTN_TASK
+        }
+    }
+  '';
 }
 
