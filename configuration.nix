@@ -98,6 +98,7 @@
             waybar
             sway
             xwayland
+            postman
             material-cursors
             zip
             htop
