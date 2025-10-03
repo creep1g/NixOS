@@ -90,6 +90,7 @@
             brave
             bibata-cursors
             hyprpaper
+            sshuttle
             wayland
             swww
             swaylock-fancy
