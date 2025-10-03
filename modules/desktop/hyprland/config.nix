@@ -63,6 +63,9 @@
         sensitivity = 0;
         scroll_method = "on_button_down";
         scroll_button = "279";
+        touchpad = {
+                 natural_scroll = true;
+            };
 
       };
       cursor.no_hardware_cursors = true;
