@@ -153,6 +153,7 @@
             python3
 
             python313Packages.pip
+            burpsuite
 
 # Desktop extras
             blueberry
