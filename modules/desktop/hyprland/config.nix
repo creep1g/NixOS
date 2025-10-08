@@ -87,7 +87,7 @@
             name = "kensington-eagle-trackball-mouse";
             sensitivity = 5;
             scroll_method = "on_button_down";
-            scroll_button = "SHIFT";
+            scroll_button = "100";
         }
       ];
 
