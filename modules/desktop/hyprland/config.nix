@@ -88,6 +88,7 @@
             sensitivity = 5;
             scroll_method = "on_button_down";
             scroll_button = "100";
+            natural_scroll = true;
         }
       ];
 
