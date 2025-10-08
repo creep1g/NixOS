@@ -61,9 +61,7 @@
         kb_variant = "dvorak";
         follow_mouse = 1;
         sensitivity = 5;
-        scroll_methiod = "on_button_down";
-        scroll_button = "279";
-        touchpad = {
+                touchpad = {
                  natural_scroll = true;
             };
 
@@ -80,7 +78,8 @@
 
         name = "elecom-trackball-mouse-huge-trackball-1";
         sensitivity = 0;
-
+        scroll_method = "on_button_down";
+        scroll_button = "279";
         }
       ];
 
