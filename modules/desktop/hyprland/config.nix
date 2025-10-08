@@ -68,6 +68,14 @@
             };
 
       };
+
+      "device:kensington-eagle-trackball-mouse" = {
+        scroll_method = "on_button_down";
+        scroll_button = "279";
+        sensitivity = 0;
+        accel_profile = "flat";
+        natural_scroll = true;
+      };
       cursor.no_hardware_cursors = true;
 
       general = {
