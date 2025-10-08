@@ -65,6 +65,7 @@
         scroll_button = "279";
         touchpad = {
                  natural_scroll = true;
+                 sensitivity = 0;
             };
 
       };
