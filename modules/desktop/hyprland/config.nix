@@ -65,8 +65,10 @@
         scroll_button = "279";
         touchpad = {
                  natural_scroll = true;
-                 sensitivity = 0;
             };
+        ven_0488:00-0488:104a-touchpad = {
+                sensitivity = 0;
+        }
 
       };
 
