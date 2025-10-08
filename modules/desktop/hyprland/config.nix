@@ -71,8 +71,9 @@
 
       cursor.no_hardware_cursors = true;
 
-      "device:ven_0488:00-0488:104a-touchpad" = {
-                sensitivity = 0;
+      device ={
+       name = ven_0488:00-0488:104a-touchpad
+       sensitivity = 0;
       };
 
       general = {
