@@ -70,16 +70,24 @@
       cursor.no_hardware_cursors = true;
 
       device = [
+
         {
-        name = "ven_0488:00-0488:104a-touchpad";
-        sensitivity = 0;
+            name = "ven_0488:00-0488:104a-touchpad";
+            sensitivity = 0;
         }
         {
 
-        name = "elecom-trackball-mouse-huge-trackball-1";
-        sensitivity = 0;
-        scroll_method = "on_button_down";
-        scroll_button = "279";
+            name = "elecom-trackball-mouse-huge-trackball-1";
+            sensitivity = 0;
+            scroll_method = "on_button_down";
+            scroll_button = "279";
+        }
+
+        {
+            name = "kensington-eagle-trackball-mouse";
+            sensitivity = 5;
+            scroll_method = "on_button_down";
+            scroll_button = "SHIFT";
         }
       ];
 
