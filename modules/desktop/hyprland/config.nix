@@ -68,7 +68,7 @@
             };
         ven_0488:00-0488:104a-touchpad = {
                 sensitivity = 0;
-        }
+        };
 
       };
 
