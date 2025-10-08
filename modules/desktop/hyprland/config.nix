@@ -72,7 +72,7 @@
       cursor.no_hardware_cursors = true;
 
       device = {
-       name = "ven_0488:00-0488:104a-touchpad"
+       name = "ven_0488:00-0488:104a-touchpad";
        sensitivity = 0;
       };
 
