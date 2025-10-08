@@ -70,16 +70,20 @@
       cursor.no_hardware_cursors = true;
 
       device = {
-             name = "ven_0488:00-0488:104a-touchpad";
+        "ven_0488:00-0488:104a-touchpad" = {
              sensitivity = 0;
-      };
+        };
 
-      device = {
-            name =  "elecom-trackball-mouse-huge-trackball-1";
+       "elecom-trackball-mouse-huge-trackball-1" = {
             sensitivity = 0;
             scroll_methiod = "on_button_down";
             scroll_button = "279";
+        };
+
       };
+
+      device = {
+             };
 
       general = {
         gaps_in = 5;
