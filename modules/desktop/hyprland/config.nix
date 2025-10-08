@@ -60,7 +60,7 @@
         kb_layout = "custom";
         kb_variant = "dvorak";
         follow_mouse = 1;
-        sensitivity = 0;
+        sensitivity = 5;
         scroll_method = "on_button_down";
         scroll_button = "279";
         touchpad = {
@@ -69,13 +69,6 @@
 
       };
 
-      "device:Kensington Eagle Trackball Mouse" = {
-        scroll_method = "on_button_down";
-        scroll_button = "279";
-        sensitivity = 0;
-        accel_profile = "flat";
-        natural_scroll = true;
-      };
       cursor.no_hardware_cursors = true;
 
       general = {
