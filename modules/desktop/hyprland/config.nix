@@ -69,7 +69,7 @@
 
       };
 
-      "device:kensington-eagle-trackball-mouse" = {
+      "device:Kensington Eagle Trackball Mouse" = {
         scroll_method = "on_button_down";
         scroll_button = "279";
         sensitivity = 0;
