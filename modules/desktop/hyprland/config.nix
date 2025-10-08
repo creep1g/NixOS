@@ -66,7 +66,7 @@
         touchpad = {
                  natural_scroll = true;
             };
-        ven_0488:00-0488:104a-touchpad = {
+        device:ven_0488:00-0488:104a-touchpad = {
                 sensitivity = 0;
         };
 
