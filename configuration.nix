@@ -94,6 +94,7 @@
             wayland
             swww
             swaylock-fancy
+            xorg.xhost
             swaylock-effects
             waybar
             sway
