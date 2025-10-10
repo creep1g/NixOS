@@ -172,10 +172,9 @@
         "$mainMod, X, exec, .config/rofi/scripts/powermenu"
         "$mainMod SHIFT, X, exec, .config/hypr/scripts/lock"
         "CTRL, Q, exec, qutebrowser"
-        "$mainMod E, emacs"
 	
         "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
+    	"$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
 
