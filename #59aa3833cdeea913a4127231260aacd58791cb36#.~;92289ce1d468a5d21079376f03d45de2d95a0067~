@@ -86,10 +86,10 @@
     jack.enable = true;
   };
 
-  #services.wireplumber.enable = true;
+  services.wireplumber.enable = true;
 
   # Disable legacy PulseAudio service (PipeWire provides compatibility)
-  #hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
 # List packages installed in system profile. To search, run:
 # $ nix search wget
     environment.systemPackages = with pkgs; [
