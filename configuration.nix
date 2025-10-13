@@ -77,13 +77,26 @@
         shell = pkgs.fish;
     };
 
+## Audio
+##
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;  # This gives you pactl
+    jack.enable = true;
+  };
 
+  services.wireplumber.enable = true;
+
+  # Disable legacy PulseAudio service (PipeWire provides compatibility)
+  hardware.pulseaudio.enable = false;
 # List packages installed in system profile. To search, run:
 # $ nix search wget
     environment.systemPackages = with pkgs; [
 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 # Core desktop / Hyprland
-        hyprland
+            hyprland
+            pulseudio
             hyprcursor
             spicetify-cli
             spotify
