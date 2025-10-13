@@ -79,12 +79,12 @@
 
 ## Audio
 ##
-   # services.pipewire = {
-     # enable = true;
-     # alsa.enable = true;
-     # pulse.enable = true;  # This gives you pactl
-     # jack.enable = true;
-   # };
+   services.pipewire = {
+     enable = true;
+     alsa.enable = true;
+     pulse.enable = true;  # This gives you pactl
+     jack.enable = true;
+   };
 
    services.wireplumber.enable = true;
 
