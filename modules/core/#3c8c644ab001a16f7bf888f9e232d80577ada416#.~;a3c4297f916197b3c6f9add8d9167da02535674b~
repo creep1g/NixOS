@@ -12,7 +12,7 @@
         allowedTCPPorts = [];         # No incoming TCP allowed
         allowedUDPPorts = [];         # No incoming UDP allowed
         allowPing = true;             # optional, set to false to block ping
-        extraRules = ''
+        extraCommands = ''
           # Drop all SSH traffic except from the allowed IP
           iptables -A INPUT -p tcp --dport 22 -s 130.208.148.26 -j ACCEPT
           iptables -A INPUT -p tcp --dport 22 -j DROP
