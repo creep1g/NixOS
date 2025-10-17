@@ -88,13 +88,6 @@
 
    # services.wireplumber.enable = true;
 
-   services.openssh = {
-  enable = true;
-  settings = {
-    PermitRootLogin = "no";
-    PasswordAuthentication = true;
-  };
-};
   # Disable legacy PulseAudio service (PipeWire provides compatibility)
    # hardware.pulseaudio.enable = false;
 # List packages installed in system profile. To search, run:
