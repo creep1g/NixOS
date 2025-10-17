@@ -9,7 +9,7 @@
     networking.firewall = {
         enable = true;                # firewall on
         logRefusedConnections = true; # Logging (low)
-        allowedTCPPorts = [];         # No incoming TCP allowed
+        allowedTCPPorts = [22];         # No incoming TCP allowed
         allowedUDPPorts = [];         # No incoming UDP allowed
         allowPing = true;             # optional, set to false to block ping
         extraCommands = ''
