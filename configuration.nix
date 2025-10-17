@@ -87,6 +87,13 @@
    };
 
    # services.wireplumber.enable = true;
+services.openssh = {
+  enable = true;
+  settings = {
+    PermitRootLogin = "no";
+    PasswordAuthentication = false;
+  };
+};
 
   # Disable legacy PulseAudio service (PipeWire provides compatibility)
    # hardware.pulseaudio.enable = false;
