@@ -106,6 +106,7 @@
             sshuttle
             wayland
             swww
+            sshfs
             swaylock-fancy
             xorg.xhost
             swaylock-effects
