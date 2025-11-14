@@ -105,6 +105,7 @@
             hyprpaper
             sshuttle
             wayland
+            mailhog
             swww
             sshfs
             swaylock-fancy
