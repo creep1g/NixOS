@@ -44,19 +44,10 @@
         LC_TIME = "is_IS.UTF-8";
     };
 
-# Configure keymap in X11
-    services.xserver.xkb = {
-        layout = "custom";
-        variant = "dvorak";
-    };
-
-# Configure console keymap
-    console.keyMap = "dvorak";
-
 # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.gilli = {
+    users.users.irei = {
         isNormalUser = true;
-        description = "gilli";
+        description = "irei";
         extraGroups = [ "networkmanager" "wheel" "input"];
         packages = with pkgs; [];
     };
@@ -84,6 +75,7 @@
      alsa.enable = true;
      pulse.enable = true;  # This gives you pactl
      jack.enable = true;
+     wireplumber.enable = true;
    };
 
    # services.wireplumber.enable = true;
@@ -95,22 +87,15 @@
     environment.systemPackages = with pkgs; [
 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 # Core desktop / Hyprland
-            hyprland
+
             pulseaudio
-            hyprcursor
-            spicetify-cli
-            spotify
             brave
             bibata-cursors
             hyprpaper
             sshuttle
             wayland
-            swww
             sshfs
-            swaylock-fancy
             xorg.xhost
-            swaylock-effects
-            waybar
             sway
             xwayland
             postman
@@ -172,16 +157,10 @@
             burpsuite
 
 # Desktop extras
-            blueberry
-            bluez
-            bluez-tools
             xdg-user-dirs
             gnome-keyring
             neofetch
-            obs-studio
             vlc
-            discord
-            betterdiscordctl
             vscode
             wget
             git

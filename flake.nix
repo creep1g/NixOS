@@ -8,10 +8,10 @@
         dotfiles.url = "github:creep1g/NixOS-Dotfiles"; # Repo
         hyprland.url = "github:hyprwm/Hyprland";
 
-        hypr-contrib = {
-            url = "github:hyprwm/contrib";
-            inputs.nixpkgs.follows = "hyprland/nixpkgs";
-        };
+#        hypr-contrib = {
+#            url = "github:hyprwm/contrib";
+#            inputs.nixpkgs.follows = "hyprland/nixpkgs";
+#        };
     };
 
 
@@ -31,12 +31,12 @@
                 {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
-                    home-manager.users.gilli = { ... }: {
-                        imports = [ ./home.nix ];
-                        _module.args.dotfiles = dotfiles;
-                         _module.args.hyprland = hyprland; # Pass the input
+                    #home-manager.users.irei = { ... }: {
+                    #    imports = [ ./home.nix ];
+                    #    _module.args.dotfiles = dotfiles;
+                     #    _module.args.hyprland = hyprland; # Pass the input
 
-                    };
+                    #};
                 }
             ];
         };
