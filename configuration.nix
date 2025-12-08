@@ -97,7 +97,7 @@
 # Core desktop / Hyprland
             hyprland
             pulseaudio
-            thunar
+            xfce.thunar
             hyprcursor
             spicetify-cli
             spotify
