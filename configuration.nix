@@ -97,6 +97,7 @@
 # Core desktop / Hyprland
             hyprland
             pulseaudio
+            thunar
             hyprcursor
             spicetify-cli
             spotify
