@@ -107,8 +107,11 @@
             sshuttle
             wayland
             mailhog
+            usbutils
+            rawtherapee
             swww
             sshfs
+            firefox
             swaylock-fancy
             xorg.xhost
             swaylock-effects
