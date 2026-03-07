@@ -99,6 +99,7 @@
             pulseaudio
             xfce.thunar
 	    calibre
+	    qbittorrent
             hyprcursor
             spicetify-cli
             spotify
