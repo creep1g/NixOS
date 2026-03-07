@@ -103,6 +103,7 @@
 	    gnumake
 	    gcc
             pkg-config
+	    xfce.thunar-volman
             hyprcursor
             spicetify-cli
             spotify
