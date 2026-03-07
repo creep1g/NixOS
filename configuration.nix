@@ -100,6 +100,9 @@
             xfce.thunar
 	    calibre
 	    qbittorrent
+	    gnumake
+	    gcc
+            pkg-config
             hyprcursor
             spicetify-cli
             spotify
