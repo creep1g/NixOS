@@ -98,6 +98,7 @@
             hyprland
             pulseaudio
             xfce.thunar
+	    calibre
             hyprcursor
             spicetify-cli
             spotify
