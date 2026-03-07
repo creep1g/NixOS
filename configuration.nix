@@ -114,6 +114,7 @@
             pkg-config
 	    xfce.thunar-volman
             hyprcursor
+	    kcc
             spicetify-cli
             spotify
             brave
