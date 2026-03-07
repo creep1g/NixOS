@@ -88,6 +88,15 @@
 
    # services.wireplumber.enable = true;
 
+   services.udisks2.enable = true;
+
+   services.gvfs.enable = true; # needed for Thunar automount
+
+   services.devmon.enable = true; # optional but helpful
+   services.udev.packages = with pkgs; [
+      calibre
+   ];
+
   # Disable legacy PulseAudio service (PipeWire provides compatibility)
    # hardware.pulseaudio.enable = false;
 # List packages installed in system profile. To search, run:
