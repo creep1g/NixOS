@@ -115,6 +115,7 @@
 	    xfce.thunar-volman
             hyprcursor
 	    kcc
+	    inkscape
             spicetify-cli
             spotify
             brave
