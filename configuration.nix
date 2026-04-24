@@ -116,6 +116,7 @@
             hyprcursor
 	    kcc
 	    inkscape
+            geeqie
             spicetify-cli
             spotify
             brave
