@@ -193,6 +193,45 @@
 
             python313Packages.pip
             burpsuite
+  # === RECON ===
+  subfinder          # subdomain enumeration
+  httpx              # probe live hosts
+  amass              # in-depth subdomain enum
+  ffuf               # web fuzzer
+  gobuster           # directory/subdomain brute force
+  feroxbuster        # recursive content discovery
+  nuclei             # vulnerability scanner with templates
+  waybackurls        # pull URLs from Wayback Machine
+
+  # === NETWORK SCANNING ===
+  nmap               # port scanning
+  masscan            # fast port scanning
+  netcat             # network swiss army knife
+  wireshark          # packet analysis (GUI)
+  tshark             # wireshark CLI
+
+  # === WEB TESTING / EXPLOITATION ===
+  sqlmap             # SQL injection automation
+  nikto              # web server scanner
+  curl               # HTTP requests
+  wget               # file retrieval
+  python3            # scripting
+  python3Packages.requests
+  python3Packages.beautifulsoup4
+
+  # === PASSWORD / HASH TOOLS ===
+  hashcat            # GPU hash cracking
+  john               # John the Ripper
+  	    hydra              # online brute force
+
+  # === UTILITIES ===
+  	    jq                 # JSON parsing (great for API responses)
+ 	    proxychains        # route tools through Burp
+            tor
+            openssl
+            whois
+            dnsutils           # dig, nslookup
+	    binutils
 
 # Desktop extras
             blueberry
