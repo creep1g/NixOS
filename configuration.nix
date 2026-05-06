@@ -61,7 +61,7 @@ virtualisation.docker = {
     users.users.gilli = {
         isNormalUser = true;
         description = "gilli";
-        extraGroups = [ "networkmanager" "wheel" "input"];
+        extraGroups = [ "networkmanager" "wheel" "input" "docker"];
         packages = with pkgs; [];
     };
 
