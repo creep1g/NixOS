@@ -44,6 +44,10 @@
         LC_TIME = "is_IS.UTF-8";
     };
 
+virtualisation.docker = {
+  enable = true;
+  enableOnBoot = true;  # starts automatically
+};
 # Configure keymap in X11
     services.xserver.xkb = {
         layout = "custom";
