@@ -247,6 +247,8 @@
             vscode
             wget
             git
+	    docker
+            docker-compose
             qutebrowser
             vim
             ];
