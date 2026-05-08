@@ -126,6 +126,7 @@ virtualisation.docker = {
             brave
             bibata-cursors
             hyprpaper
+	    copilot-language-server
             sshuttle
             wayland
             mailhog
