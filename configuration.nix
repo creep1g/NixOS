@@ -101,6 +101,8 @@ virtualisation.docker = {
       calibre
    ];
 
+services.tailscale.enable = true;
+
   # Disable legacy PulseAudio service (PipeWire provides compatibility)
    # hardware.pulseaudio.enable = false;
 # List packages installed in system profile. To search, run:
