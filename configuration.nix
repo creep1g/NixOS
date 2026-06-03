@@ -116,6 +116,9 @@ services.tailscale.enable = true;
             hyprland
             pulseaudio
             xfce.thunar
+	    grim
+            slurp
+            satty
 	    calibre
 	    qbittorrent
 	    gnumake
