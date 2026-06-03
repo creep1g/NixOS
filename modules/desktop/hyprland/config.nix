@@ -177,7 +177,7 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        ", PRINT, exec, grim -g "$(slurp)" - | satty -f -"
+        "PRINT, exec, grim -g "$(slurp)" - | satty -f -"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
