@@ -177,7 +177,6 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        "PRINT, exec, grim -g "$(slurp)" - | satty -f -"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -213,7 +212,8 @@
         "$mainMod CTRL, 8, movetoworkspacesilent, 8"
         "$mainMod CTRL, 9, movetoworkspacesilent, 9"
         "$mainMod CTRL, 0, movetoworkspacesilent, 10"
-        ", Print, exec, $scripts/screenshot --area"
+        #", Print, exec, $scripts/screenshot --area"
+        ", PRINT, exec, grim -g '$(slurp)' - | satty -f -"
 
         "$mainMod, Print, exec, $scripts/screenshot --now"
         ", xf86monbrightnessup, exec, $scripts/brightness --inc"
