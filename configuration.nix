@@ -30,7 +30,6 @@
     time.timeZone = "Atlantic/Reykjavik";
     networking.hosts = {
 	"130.208.165.190" = [ "site1.irei.hi.is" ];
-	"130.208.165.190" = [ "site2.irei.hi.is" ];
      };
 
 # Select internationalisation properties.
