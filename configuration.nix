@@ -28,9 +28,9 @@
 
 # Set your time zone.
     time.timeZone = "Atlantic/Reykjavik";
-    networking.hosts = {
-	"130.208.165.190" = [ "site1.irei.hi.is" "site2.irei.hi.is" ];
-     };
+    #networking.hosts = {
+	#"130.208.165.190" = [ "site1.irei.hi.is" "site2.irei.hi.is" ];
+     #};
 
 # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
