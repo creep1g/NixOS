@@ -255,6 +255,7 @@ services.tailscale.enable = true;
             neofetch
             obs-studio
             vlc
+	    sl
             discord
             betterdiscordctl
             vscode
