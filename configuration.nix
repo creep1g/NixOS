@@ -273,6 +273,11 @@ services.tailscale.enable = true;
         MAGICK_HOME = "/run/current-system/sw";
     };
 
+    services.iperf3 = {
+  enable = true;
+  openFirewall = true; # Opens port 5201 automatically
+};
+
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
 # programs.mtr.enable = true;
