@@ -260,6 +260,7 @@ services.tailscale.enable = true;
             betterdiscordctl
             vscode
             wget
+	    iperf3
             git
 	    docker
             docker-compose
