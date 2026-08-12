@@ -8,7 +8,7 @@ let
         src = pkgs.fetchFromGitHub {
             owner = "creep1g";
             repo = "simple-sddm-2";
-            rev = "a1b3ab76f8f7d2141d1060a0e99ff1f6ef08b45f";
+            rev = "91cfc60991c8d9cce9f58ded010a06017533bb13";
             sha256 = "I4Df7YnpA47Z4bAYyIskRiz2HyqBnl/lrEfcNdTAVcc="; # lib.fakeSha256;
         };
 
