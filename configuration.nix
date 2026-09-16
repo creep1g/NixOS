@@ -231,7 +231,7 @@ services.tailscale.enable = true;
   python3            # scripting
   python3Packages.requests
   python3Packages.beautifulsoup4
-  python3Packages.yaml
+  python3Packages.pyyaml
 
   # === PASSWORD / HASH TOOLS ===
   hashcat            # GPU hash cracking
