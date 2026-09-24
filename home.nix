@@ -1,52 +1,25 @@
-{ config, pkgs, lib, environment, ... }:
+{ config, pkgs, ... }:
 {
-    home.username = "gilli";
-    home.homeDirectory = "/home/gilli";
+  imports = [
+    ./modules/desktop.nix
+  ];
 
+  home.username = "gilli";
+  home.homeDirectory = "/home/gilli";
 
-# 1. Enable the cursor configuration
-    home.pointerCursor = {
-# The Nix package that provides the cursor theme
-        package = pkgs.bibata-cursors;
+  # Cursor theme for GTK, XWayland and (via the variables below) Hyprland.
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic"; # case-sensitive
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
 
-# The actual theme name inside the package (e.g., the folder name)
-# The name is case-sensitive!
-        name = "Bibata-Modern-Classic";
+  home.sessionVariables = {
+    HYPRCURSOR_THEME = config.home.pointerCursor.name;
+    HYPRCURSOR_SIZE = toString config.home.pointerCursor.size;
+  };
 
-# The size of the cursor (e.g., 16, 24, 32)
-        size = 24;
-
-# This ensures the setting is applied to GTK applications
-        gtk.enable = true;
-
-# This ensures the setting is applied to XWayland applications
-        x11.enable = true;
-    };
-
-# 2. Add Hyprland-specific Environment Variables
-# Hyprland uses the HYPRCURSOR_THEME variable, and Home Manager should set it
-# automatically based on the above, but explicitly setting it can help.
-    home.sessionVariables = {
-# Match the name and size from above
-        HYPRCURSOR_THEME = config.home.pointerCursor.name;
-        HYPRCURSOR_SIZE = builtins.toString config.home.pointerCursor.size;
-    };
-
-# Optional but recommended: For full consistency across all apps (Hyprland, GTK, XWayland):
-# Ensure your Hyprland configuration is also using these variables.
-# If you are using the Home Manager Hyprland module:
-# wayland.windowManager.hyprland.settings = {
-#   env = [
-#     "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"
-#     "HYPRCURSOR_SIZE,${builtins.toString config.home.pointerCursor.size}"
-#   ];
-#   # You may also explicitly set the cursor in the Hyprland config for good measure
-#   # exec-once = hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size};
-# };
-    imports = [
-        ./modules/desktop.nix
-    ];
-
-
-    home.stateVersion = "25.05";
+  home.stateVersion = "25.05";
 }

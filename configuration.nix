@@ -1,245 +1,196 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+{ config, pkgs, lib, ... }:
 
-{ config, pkgs, lib, fetchTarball, ... }: {
-    imports =
-        [ # Include the results of the hardware scan.
-        ./hardware-configuration.nix
-        ];
-# My services :)
-    services.spice-vdagentd.enable = true;
-    services.xserver.enable = true;
-    programs.xwayland.enable = true;
+{
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-    hardware.bluetooth.enable = true;
-    services.blueman.enable = true;
+  # ── Nix ──────────────────────────────────────────────────────────────
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  programs.nix-ld.enable = true;
 
-    services.libinput.enable = true;
-# My programs
-    programs.hyprland = {
-        enable = true;
-    };
+  # ── Locale / time / keymap ───────────────────────────────────────────
+  time.timeZone = "Atlantic/Reykjavik";
 
-    xdg.portal.enable = true;
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "is_IS.UTF-8";
+    LC_IDENTIFICATION = "is_IS.UTF-8";
+    LC_MEASUREMENT = "is_IS.UTF-8";
+    LC_MONETARY = "is_IS.UTF-8";
+    LC_NAME = "is_IS.UTF-8";
+    LC_NUMERIC = "is_IS.UTF-8";
+    LC_PAPER = "is_IS.UTF-8";
+    LC_TELEPHONE = "is_IS.UTF-8";
+    LC_TIME = "is_IS.UTF-8";
+  };
 
-# Use latest kernel.
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+  # The "custom" layout is defined in modules/keyboard.nix
+  services.xserver.xkb = {
+    layout = "custom";
+    variant = "dvorak";
+  };
+  console.keyMap = "dvorak";
 
-# Set your time zone.
-    time.timeZone = "Atlantic/Reykjavik";
+  # ── User ─────────────────────────────────────────────────────────────
+  users.users.gilli = {
+    isNormalUser = true;
+    description = "gilli";
+    extraGroups = [ "networkmanager" "wheel" "input" ];
+    shell = pkgs.fish;
+  };
+  programs.fish.enable = true;
 
-# Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
+  # ── Desktop ──────────────────────────────────────────────────────────
+  services.xserver.enable = true;
+  programs.hyprland.enable = true;
+  programs.xwayland.enable = true;
+  xdg.portal.enable = true;
+  services.libinput.enable = true;
+  services.spice-vdagentd.enable = true;
 
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "is_IS.UTF-8";
-        LC_IDENTIFICATION = "is_IS.UTF-8";
-        LC_MEASUREMENT = "is_IS.UTF-8";
-        LC_MONETARY = "is_IS.UTF-8";
-        LC_NAME = "is_IS.UTF-8";
-        LC_NUMERIC = "is_IS.UTF-8";
-        LC_PAPER = "is_IS.UTF-8";
-        LC_TELEPHONE = "is_IS.UTF-8";
-        LC_TIME = "is_IS.UTF-8";
-    };
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
-# Configure keymap in X11
-    services.xserver.xkb = {
-        layout = "custom";
-        variant = "dvorak";
-    };
+  # ── Audio (PipeWire, with PulseAudio/JACK compatibility) ─────────────
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
-# Configure console keymap
-    console.keyMap = "dvorak";
+  # ── Storage / automount ──────────────────────────────────────────────
+  services.udisks2.enable = true;
+  services.gvfs.enable = true; # needed for Thunar automount
+  services.devmon.enable = true;
+  services.udev.packages = with pkgs; [ calibre ];
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.gilli = {
-        isNormalUser = true;
-        description = "gilli";
-        extraGroups = [ "networkmanager" "wheel" "input"];
-        packages = with pkgs; [];
-    };
+  # ── Packages ─────────────────────────────────────────────────────────
+  # hyprland, xwayland and fish are installed by their programs.* modules above.
+  environment.systemPackages = with pkgs; [
+    # Hyprland / Wayland desktop
+    hyprcursor
+    hyprpaper
+    swww
+    waybar
+    sway
+    wayland
+    wlroots
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    swaylock-effects
+    swaylock-fancy
+    mako
+    libnotify
+    rofi
+    rofi-emoji
+    grim
+    slurp
+    wl-clipboard
+    wtype
+    xorg.xhost
+    glib
+    gsettings-desktop-schemas
+    gtk3
+    gtk4
+    bibata-cursors
+    material-cursors
 
-    programs.nix-ld.enable = true;
-#programs.nix-ld.enable = with pkgs; [];
-# Experimental features
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nixpkgs.config.allowUnfree = true;
+    # Input / automation
+    libinput
+    libinput-gestures
+    wmctrl
+    xdotool
+    ydotool
+    inotify-tools
+    brightnessctl
 
+    # Audio / media
+    pulseaudio # for pactl etc.
+    pavucontrol
+    pamixer
+    playerctl
+    mpv
+    vlc
+    spotify
+    spicetify-cli
+    obs-studio
 
-# Allow unfree packages
+    # Files
+    xfce.thunar
+    xfce.thunar-volman
+    ranger
+    zip
+    unzip
+    sshfs
+    usbutils
 
-# spice service
-# SHel
-    programs.fish.enable = true;
-    users.users.gilli = {
-        shell = pkgs.fish;
-    };
+    # Terminal / editors
+    kitty
+    bash
+    vim
+    neovim
+    emacs
+    gedit
+    vscode
 
-## Audio
-##
-   services.pipewire = {
-     enable = true;
-     alsa.enable = true;
-     pulse.enable = true;  # This gives you pactl
-     jack.enable = true;
-   };
+    # Graphics / documents
+    gimp3-with-plugins
+    rawtherapee
+    imagemagick
+    viewnior
+    zathura
+    calibre
+    kcc
 
-   # services.wireplumber.enable = true;
+    # Internet / chat
+    firefox
+    brave
+    qutebrowser
+    discord
+    betterdiscordctl
+    qbittorrent
 
-   services.udisks2.enable = true;
+    # Networking / VPN
+    openconnect
+    gpclient
+    sshuttle
+    wget
 
-   services.gvfs.enable = true; # needed for Thunar automount
+    # Development
+    git
+    gnumake
+    gcc
+    pkg-config
+    nodejs
+    bun
+    jdk
+    python3
+    python313Packages.pip
+    postman
+    mailhog
+    burpsuite
 
-   services.devmon.enable = true; # optional but helpful
-   services.udev.packages = with pkgs; [
-      calibre
-   ];
+    # System / misc
+    htop
+    killall
+    neofetch
+    cmatrix
+    blueberry
+    bluez
+    bluez-tools
+    xdg-user-dirs
+    gnome-keyring
+  ];
 
-  # Disable legacy PulseAudio service (PipeWire provides compatibility)
-   # hardware.pulseaudio.enable = false;
-# List packages installed in system profile. To search, run:
-# $ nix search wget
-    environment.systemPackages = with pkgs; [
-#  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-# Core desktop / Hyprland
-            hyprland
-            pulseaudio
-            xfce.thunar
-	    calibre
-	    qbittorrent
-	    gnumake
-	    gcc
-            pkg-config
-	    xfce.thunar-volman
-            hyprcursor
-	    kcc
-            spicetify-cli
-            spotify
-            brave
-            bibata-cursors
-            hyprpaper
-            sshuttle
-            wayland
-            mailhog
-            usbutils
-            rawtherapee
-            swww
-            sshfs
-            firefox
-            swaylock-fancy
-            xorg.xhost
-            swaylock-effects
-            waybar
-            sway
-            xwayland
-            postman
-            material-cursors
-            zip
-            htop
-            wlroots
-            bash
-            unzip
-            cmatrix
-            openconnect
-            gpclient
-            xdg-desktop-portal-wlr
-            libinput-gestures
-            libinput
-            wmctrl # Useful for some commands, but you can also use hyprctl
-            xdotool  # Used to simulate keystrokes
-            ydotool
-            inotify-tools
-            glib
-            gsettings-desktop-schemas
-            xdg-desktop-portal
-            fish
-            kitty
-            neovim # Need to get nightly
-            emacs
-            gcc
-            gedit
-            rofi
-            ranger
-            libnotify
-            playerctl # do i need this?
-            gtk3
-            gtk4
-            gimp3-with-plugins
-            mako
-            pavucontrol
-            pamixer
-            brightnessctl
-            grim
-            slurp
-            wl-clipboard
-            mako
-            viewnior
-            zathura
-            imagemagick
-            wtype
-            rofi-emoji
-            mpv
-            ranger
-# Dev tools
-            nodejs
-            bun
-            jdk
-            killall
-            python3
+  environment.variables = {
+    IM6_COMPAT = "1";
+    MAGICK_HOME = "/run/current-system/sw";
+  };
 
-            python313Packages.pip
-            burpsuite
-
-# Desktop extras
-            blueberry
-            bluez
-            bluez-tools
-            xdg-user-dirs
-            gnome-keyring
-            neofetch
-            obs-studio
-            vlc
-            discord
-            betterdiscordctl
-            vscode
-            wget
-            git
-            qutebrowser
-            vim
-            ];
-
-    environment.variables = {
-        IM6_COMPAT = "1";
-        MAGICK_HOME = "/run/current-system/sw";
-    };
-
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-# programs.gnupg.agent = {
-#   enable = true;
-#   enableSSHSupport = true;
-# };
-
-# List services that you want to enable:
-
-# Enable the OpenSSH daemon.
-# services.openssh.enable = true;
-
-# Open ports in the firewall.
-# networking.firewall.allowedTCPPorts = [ ... ];
-# networking.firewall.allowedUDPPorts = [ ... ];
-# Or disable the firewall altogether.
-# networking.firewall.enable = false;
-
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It‘s perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "25.05"; # Did you read the comment?
-
-                                          }
+  # This value determines the NixOS release from which the default settings
+  # for stateful data were taken. Leave it at the release of the first install.
+  system.stateVersion = "25.05";
+}

@@ -1,18 +1,17 @@
-# Imports all modules witihn nixos/modules
+# System-level (NixOS) modules. Home Manager modules live in ./desktop.nix.
 { ... }:
 {
-	imports = [
-	./core/network.nix
-	./core/bootloader.nix
-	./core/intel.nix
-	#./core/kernel.nix
-	./pywal.nix
-	./keyboard.nix
-	./work-tools.nix
-	#./nvim/config.nix
-	./desktop/sddm.nix
+  imports = [
+    ./core/bootloader.nix
+    ./core/kernel.nix
+    ./core/network.nix
+    ./core/intel.nix
+    ./keyboard.nix
+    ./fonts.nix
+    ./pywal.nix
+    ./work-tools.nix
+    ./desktop/sddm.nix
     ./desktop/input.nix
-	./fonts.nix
-	./desktop/teams.nix
-	];
+    ./desktop/teams.nix
+  ];
 }
