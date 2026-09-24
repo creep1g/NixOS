@@ -3,5 +3,6 @@
 {
   imports = [
     ./desktop/hyprland/config.nix
+    ./desktop/conky.nix
   ];
 }
