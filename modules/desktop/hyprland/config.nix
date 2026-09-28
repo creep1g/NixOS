@@ -24,7 +24,7 @@
 
       workspace = [
         "1,monitor:eDP-1"
-        "2,monitor:eDP-1"
+        "2,monitor:HDMI-A-1"
         "3,monitor:eDP-1"
         "4,monitor:eDP-1"
         "5,monitor:eDP-1"
