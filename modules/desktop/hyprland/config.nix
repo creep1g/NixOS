@@ -15,7 +15,7 @@
       monitor = [
         "eDP-1, 1920x1200, 1920x2160,1"
         "DP-1, 5120x2160, 0x0, 1"
-	"HDMI-A-1, 1920x1080, 1920x0, 1"
+	"HDMI-A-1, 1920x1200, 0x0, 1"
       ];
 
       bindl = [
@@ -28,7 +28,7 @@
         "3,monitor:eDP-1"
         "4,monitor:eDP-1"
         "5,monitor:eDP-1"
-        "6,monitor:HDMI-A-1, layout:master"
+        "6,monitor:DP-1, layout:master"
         "7,monitor:DP-1, layout:master"
         "8,monitor:DP-1, layout:master"
         "9,monitor:DP-1, layout:master"
