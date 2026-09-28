@@ -15,7 +15,7 @@
       monitor = [
         "eDP-1, 1920x1200, 1920x2160,1"
         "DP-1, 5120x2160, 0x0, 1"
-	"HDMI-A-1, 1920x1200, 0x0, 1"
+	"HDMI-A-1, preferred, auto, 1, mirror, eDP-1"
       ];
 
       bindl = [
@@ -24,7 +24,7 @@
 
       workspace = [
         "1,monitor:eDP-1"
-        "2,monitor:HDMI-A-1"
+        "2,monitor:eDP-1"
         "3,monitor:eDP-1"
         "4,monitor:eDP-1"
         "5,monitor:eDP-1"
