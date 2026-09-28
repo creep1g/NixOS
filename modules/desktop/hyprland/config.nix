@@ -28,7 +28,7 @@
         "3,monitor:eDP-1"
         "4,monitor:eDP-1"
         "5,monitor:eDP-1"
-        "6,monitor:DP-1, layout:master"
+        "6,monitor:HDMI-A-1, layout:master"
         "7,monitor:DP-1, layout:master"
         "8,monitor:DP-1, layout:master"
         "9,monitor:DP-1, layout:master"
