@@ -6,6 +6,7 @@
     ./core/kernel.nix
     ./core/network.nix
     ./core/intel.nix
+    ./core/memory.nix
     ./keyboard.nix
     ./fonts.nix
     ./pywal.nix
