@@ -32,9 +32,9 @@
       own_window_class = 'conky',
       -- Opaque background (Hyprland rules keep it below normal windows).
       own_window_transparent = false,
-      own_window_argb_visual = true,
+      own_window_argb_visual = false,
       own_window_argb_value = 255,
-      own_window_colour = '000000',
+      own_window_colour = wal.background,
 
       -- Absolute placement is handled by Hyprland window rules, so keep
       -- conky's own alignment neutral.
@@ -49,7 +49,7 @@
       update_interval = 1.0,
       double_buffer = true,
       use_xft = true,
-      font = 'JetBrainsMono Nerd Font:size=11',
+      font = 'MonoLisa:size=11',
       draw_shades = false,
       draw_outline = false,
       draw_borders = false,
@@ -67,7 +67,7 @@
     }
 
     conky.text = [[
-    ''${alignr}''${font JetBrainsMono Nerd Font:bold:size=48}''${time %H:%M}''${font}
+    ''${alignr}''${font MonoLisa:bold:size=48}''${time %H:%M}''${font}
     ''${alignr}''${color1}''${time %A, %d %B}''${color}
     ''${voffset 8}''${color1}CPU''${color} ''${hr 1}
     ''${freq_g} GHz''${alignr}''${cpu cpu0}%
