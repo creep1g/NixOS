@@ -3,8 +3,11 @@
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true; # iwlwifi firmware etc.
 
-  # intel_gpu_top and friends, for checking GPU/video-engine usage.
-  environment.systemPackages = [ pkgs.intel-gpu-tools ];
+  # intel_gpu_top (GPU/video-engine usage) and vainfo (VA-API capabilities).
+  environment.systemPackages = with pkgs; [
+    intel-gpu-tools
+    libva-utils
+  ];
 
   hardware.graphics.enable = true;
   hardware.graphics.extraPackages = with pkgs; [
