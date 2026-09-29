@@ -1,5 +1,6 @@
 # Desktop widget: clock + CPU/memory info drawn on the Hyprland desktop.
-# Started from Hyprland's exec-once (see ./hyprland/config.nix).
+# Started from Hyprland's exec-once (see ./hyprland/config.nix), which also
+# holds the window rules that place it (bottom-left of DP-1 when connected).
 # Colours follow pywal (~/.cache/wal/colors.sh) when available.
 { pkgs, ... }:
 {
@@ -7,12 +8,17 @@
 
   xdg.configFile."conky/conky.conf".text = ''
     -- Pick up pywal colours if they exist; fall back to neutral defaults.
-    local wal = { color7 = 'd8dee9', color4 = '88c0d0', color8 = '4c566a' }
+    local wal = {
+      background = '1a1b26',
+      color7 = 'd8dee9',
+      color4 = '88c0d0',
+      color8 = '4c566a',
+    }
     local f = io.open(os.getenv('HOME') .. '/.cache/wal/colors.sh', 'r')
     if f then
       for line in f:lines() do
-        local k, v = line:match("^(color%d+)='#(%x+)'")
-        if k then wal[k] = v end
+        local k, v = line:match("^(%a+%d*)='#(%x+)'")
+        if k and wal[k] ~= nil then wal[k] = v end
       end
       f:close()
     end
@@ -21,18 +27,24 @@
       out_to_wayland = true,
       out_to_x = false,
 
-      -- 'normal' sits on the bottom layer: above the wallpaper, below windows.
       own_window = true,
       own_window_type = 'normal',
-      own_window_transparent = true,
+      own_window_class = 'conky',
+      -- Opaque background (Hyprland rules keep it below normal windows).
+      own_window_transparent = false,
       own_window_argb_visual = true,
-      own_window_argb_value = 0,
+      own_window_argb_value = 255,
+      own_window_colour = wal.background,
 
-      alignment = 'top_right',
-      gap_x = 40,
-      gap_y = 60,
+      -- Absolute placement is handled by Hyprland window rules, so keep
+      -- conky's own alignment neutral.
+      alignment = 'top_left',
+      gap_x = 0,
+      gap_y = 0,
       minimum_width = 300,
       maximum_width = 300,
+      border_inner_margin = 16,
+      border_outer_margin = 0,
 
       update_interval = 1.0,
       double_buffer = true,

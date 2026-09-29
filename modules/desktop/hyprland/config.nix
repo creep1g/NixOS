@@ -245,6 +245,18 @@
         "workspace 7, class:^(Cider)$"
         "move 0 0, title:^(flameshot)$"
         "opacity 1, xwayland 1, class:^(Apache Directory Studio)$"
+
+        # conky desktop widget: pin to the bottom-left of DP-1 when it is
+        # connected (Hyprland falls back to the current output otherwise).
+        "float, class:^(conky)$"
+        "monitor DP-1, class:^(conky)$"
+        "move 20 100%-380, class:^(conky)$"
+        "pin, class:^(conky)$"
+        "nofocus, class:^(conky)$"
+        "noblur, class:^(conky)$"
+        "noshadow, class:^(conky)$"
+        "noborder, class:^(conky)$"
+        "rounding 0, class:^(conky)$"
       ];
     };
   };

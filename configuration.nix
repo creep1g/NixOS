@@ -79,6 +79,13 @@
 
   services.tailscale.enable = true;
 
+  # Compressed RAM swap. Faster than the disk swap partition and avoids the
+  # multi-second freezes that disk swap-thrash causes under memory pressure.
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+  };
+
   services.iperf3 = {
     enable = true;
     openFirewall = true; # opens port 5201
