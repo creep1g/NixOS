@@ -15,6 +15,7 @@
       monitor = [
         "eDP-1, 1920x1200, 1920x2160,1"
         "DP-1, 5120x2160, 0x0, 1"
+	"HDMI-A-1, preferred, auto, 1, mirror, eDP-1"
       ];
 
       bindl = [
@@ -213,7 +214,8 @@
         "$mainMod CTRL, 8, movetoworkspacesilent, 8"
         "$mainMod CTRL, 9, movetoworkspacesilent, 9"
         "$mainMod CTRL, 0, movetoworkspacesilent, 10"
-        ", Print, exec, $scripts/screenshot --area"
+        ", Print, exec, $scripts/screenshot"
+        #", Print, exec, grim -g $(slurp) - | satty -f -"
 
         "$mainMod, Print, exec, $scripts/screenshot --now"
         ", xf86monbrightnessup, exec, $scripts/brightness --inc"

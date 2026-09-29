@@ -13,6 +13,10 @@
   # ── Locale / time / keymap ───────────────────────────────────────────
   time.timeZone = "Atlantic/Reykjavik";
 
+  # networking.hosts = {
+  #   "130.208.165.190" = [ "site1.irei.hi.is" "site2.irei.hi.is" ];
+  # };
+
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "is_IS.UTF-8";
@@ -37,7 +41,7 @@
   users.users.gilli = {
     isNormalUser = true;
     description = "gilli";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "docker" ];
     shell = pkgs.fish;
   };
   programs.fish.enable = true;
@@ -67,6 +71,19 @@
   services.devmon.enable = true;
   services.udev.packages = with pkgs; [ calibre ];
 
+  # ── Containers / networking services ─────────────────────────────────
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+  };
+
+  services.tailscale.enable = true;
+
+  services.iperf3 = {
+    enable = true;
+    openFirewall = true; # opens port 5201
+  };
+
   # ── Packages ─────────────────────────────────────────────────────────
   # hyprland, xwayland and fish are installed by their programs.* modules above.
   environment.systemPackages = with pkgs; [
@@ -88,6 +105,7 @@
     rofi-emoji
     grim
     slurp
+    satty
     wl-clipboard
     wtype
     xorg.xhost
@@ -135,11 +153,14 @@
     emacs
     gedit
     vscode
+    copilot-language-server
 
     # Graphics / documents
     gimp3-with-plugins
     rawtherapee
     imagemagick
+    inkscape
+    geeqie
     viewnior
     zathura
     calibre
@@ -158,6 +179,7 @@
     gpclient
     sshuttle
     wget
+    iperf3
 
     # Development
     git
@@ -171,13 +193,55 @@
     python313Packages.pip
     postman
     mailhog
+    docker
+    docker-compose
+
+    # Security — recon
+    subfinder    # subdomain enumeration
+    httpx        # probe live hosts
+    amass        # in-depth subdomain enum
+    ffuf         # web fuzzer
+    gobuster     # directory/subdomain brute force
+    feroxbuster  # recursive content discovery
+    nuclei       # vulnerability scanner with templates
+    waybackurls  # pull URLs from the Wayback Machine
+
+    # Security — network scanning
+    nmap
+    masscan
+    netcat
+    wireshark    # GUI packet analysis
+    tshark       # wireshark CLI
+
+    # Security — web testing / exploitation
     burpsuite
+    sqlmap
+    nikto
+    curl
+    python3Packages.requests
+    python3Packages.beautifulsoup4
+    python3Packages.pyyaml
+
+    # Security — password / hash tools
+    hashcat
+    john
+    hydra
+
+    # Security — utilities
+    jq
+    proxychains
+    tor
+    openssl
+    whois
+    dnsutils     # dig, nslookup
+    binutils
 
     # System / misc
     htop
     killall
     neofetch
     cmatrix
+    sl
     blueberry
     bluez
     bluez-tools
