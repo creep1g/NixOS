@@ -53,6 +53,11 @@
       env = [
         "XCURSOR_SIZE,18"
 	"XCURSOR_THEME,Thono"
+        # Hardware-accelerate video in QtWebEngine (qutebrowser). Set here in
+        # Hyprland's env so every app the session spawns inherits it - unlike
+        # home.sessionVariables, which a display-manager session does not source.
+        "LIBVA_DRIVER_NAME,iHD"
+        "QTWEBENGINE_CHROMIUM_FLAGS,--enable-features=VaapiVideoDecoder,VaapiVideoDecodeLinuxGL,CanvasOopRasterization --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy"
       ];
 
       xwayland = {
