@@ -1,13 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-    environment.systemPackages = with pkgs; [
-        jxplorer
-        (writeShellScriptBin "jxplorer-wrapped" ''
-            JXPLORER_DIR="${pkgs.jxplorer}/opt/jxplorer"
-    
-            cd "$JXPLORER_DIR"
-            exec "./jxplorer.sh" "-Djxplorer.config=$HOME/.local/jxplorer" "$@"
-        '')
-    ];
-
+  environment.systemPackages = [
+    pkgs.jxplorer
+    (pkgs.writeShellScriptBin "jxplorer-wrapped" ''
+      cd "${pkgs.jxplorer}/opt/jxplorer"
+      exec ./jxplorer.sh "-Djxplorer.config=$HOME/.local/jxplorer" "$@"
+    '')
+  ];
 }

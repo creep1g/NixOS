@@ -1,309 +1,265 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+{ config, pkgs, lib, ... }:
 
-{ config, pkgs, lib, fetchTarball, ... }: {
-    imports =
-        [ # Include the results of the hardware scan.
-        ./hardware-configuration.nix
-        ];
-# My services :)
-    services.spice-vdagentd.enable = true;
-    services.xserver.enable = true;
-    programs.xwayland.enable = true;
+{
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-    hardware.bluetooth.enable = true;
-    services.blueman.enable = true;
+  # ── Nix ──────────────────────────────────────────────────────────────
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  programs.nix-ld.enable = true;
 
-    services.libinput.enable = true;
-# My programs
-    programs.hyprland = {
-        enable = true;
-    };
+  # ── Locale / time / keymap ───────────────────────────────────────────
+  time.timeZone = "Atlantic/Reykjavik";
 
-    xdg.portal.enable = true;
+  # networking.hosts = {
+  #   "130.208.165.190" = [ "site1.irei.hi.is" "site2.irei.hi.is" ];
+  # };
 
-# Use latest kernel.
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "is_IS.UTF-8";
+    LC_IDENTIFICATION = "is_IS.UTF-8";
+    LC_MEASUREMENT = "is_IS.UTF-8";
+    LC_MONETARY = "is_IS.UTF-8";
+    LC_NAME = "is_IS.UTF-8";
+    LC_NUMERIC = "is_IS.UTF-8";
+    LC_PAPER = "is_IS.UTF-8";
+    LC_TELEPHONE = "is_IS.UTF-8";
+    LC_TIME = "is_IS.UTF-8";
+  };
 
-# Set your time zone.
-    time.timeZone = "Atlantic/Reykjavik";
-    #networking.hosts = {
-	#"130.208.165.190" = [ "site1.irei.hi.is" "site2.irei.hi.is" ];
-     #};
+  # The "custom" layout is defined in modules/keyboard.nix
+  services.xserver.xkb = {
+    layout = "custom";
+    variant = "dvorak";
+  };
+  console.keyMap = "dvorak";
 
-# Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
+  # ── User ─────────────────────────────────────────────────────────────
+  users.users.gilli = {
+    isNormalUser = true;
+    description = "gilli";
+    extraGroups = [ "networkmanager" "wheel" "input" "docker" ];
+    shell = pkgs.fish;
+  };
+  programs.fish.enable = true;
 
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "is_IS.UTF-8";
-        LC_IDENTIFICATION = "is_IS.UTF-8";
-        LC_MEASUREMENT = "is_IS.UTF-8";
-        LC_MONETARY = "is_IS.UTF-8";
-        LC_NAME = "is_IS.UTF-8";
-        LC_NUMERIC = "is_IS.UTF-8";
-        LC_PAPER = "is_IS.UTF-8";
-        LC_TELEPHONE = "is_IS.UTF-8";
-        LC_TIME = "is_IS.UTF-8";
-    };
+  # ── Desktop ──────────────────────────────────────────────────────────
+  services.xserver.enable = true;
+  programs.hyprland.enable = true;
+  programs.xwayland.enable = true;
+  xdg.portal.enable = true;
+  services.libinput.enable = true;
+  services.spice-vdagentd.enable = true;
 
-virtualisation.docker = {
-  enable = true;
-  enableOnBoot = true;  # starts automatically
-};
-# Configure keymap in X11
-    services.xserver.xkb = {
-        layout = "custom";
-        variant = "dvorak";
-    };
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
-# Configure console keymap
-    console.keyMap = "dvorak";
+  # ── Audio (PipeWire, with PulseAudio/JACK compatibility) ─────────────
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.gilli = {
-        isNormalUser = true;
-        description = "gilli";
-        extraGroups = [ "networkmanager" "wheel" "input" "docker"];
-        packages = with pkgs; [];
-    };
+  # ── Storage / automount ──────────────────────────────────────────────
+  services.udisks2.enable = true;
+  services.gvfs.enable = true; # needed for Thunar automount
+  services.devmon.enable = true;
+  services.udev.packages = with pkgs; [ calibre ];
 
-    programs.nix-ld.enable = true;
-#programs.nix-ld.enable = with pkgs; [];
-# Experimental features
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nixpkgs.config.allowUnfree = true;
+  # ── Containers / networking services ─────────────────────────────────
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+  };
 
+  services.tailscale.enable = true;
 
-# Allow unfree packages
+  # Memory-pressure tuning (zram, sysctls, earlyoom) lives in
+  # modules/core/memory.nix.
 
-# spice service
-# SHel
-    programs.fish.enable = true;
-    users.users.gilli = {
-        shell = pkgs.fish;
-    };
+  services.iperf3 = {
+    enable = true;
+    openFirewall = true; # opens port 5201
+  };
 
-## Audio
-##
-   services.pipewire = {
-     enable = true;
-     alsa.enable = true;
-     pulse.enable = true;  # This gives you pactl
-     jack.enable = true;
-   };
+  # ── Packages ─────────────────────────────────────────────────────────
+  # hyprland, xwayland and fish are installed by their programs.* modules above.
+  environment.systemPackages = with pkgs; [
+    # Hyprland / Wayland desktop
+    hyprcursor
+    hyprpaper
+    swww
+    waybar
+    sway
+    wayland
+    wlroots
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    swaylock-effects
+    swaylock-fancy
+    mako
+    libnotify
+    rofi
+    rofi-emoji
+    grim
+    slurp
+    satty
+    wl-clipboard
+    wtype
+    xorg.xhost
+    glib
+    gsettings-desktop-schemas
+    gtk3
+    gtk4
+    bibata-cursors
+    material-cursors
 
-   # services.wireplumber.enable = true;
+    # Input / automation
+    libinput
+    libinput-gestures
+    wmctrl
+    xdotool
+    ydotool
+    inotify-tools
+    brightnessctl
 
-   services.udisks2.enable = true;
+    # Audio / media
+    pulseaudio # for pactl etc.
+    pavucontrol
+    pamixer
+    playerctl
+    mpv
+    vlc
+    spotify
+    spicetify-cli
+    obs-studio
 
-   services.gvfs.enable = true; # needed for Thunar automount
+    # Files
+    xfce.thunar
+    xfce.thunar-volman
+    ranger
+    zip
+    unzip
+    sshfs
+    usbutils
 
-   services.devmon.enable = true; # optional but helpful
-   services.udev.packages = with pkgs; [
-      calibre
-   ];
+    # Terminal / editors
+    kitty
+    bash
+    vim
+    neovim
+    emacs
+    gedit
+    vscode
+    copilot-language-server
 
-services.tailscale.enable = true;
+    # Graphics / documents
+    gimp3-with-plugins
+    rawtherapee
+    imagemagick
+    inkscape
+    geeqie
+    viewnior
+    zathura
+    calibre
+    kcc
 
-  # Disable legacy PulseAudio service (PipeWire provides compatibility)
-   # hardware.pulseaudio.enable = false;
-# List packages installed in system profile. To search, run:
-# $ nix search wget
-    environment.systemPackages = with pkgs; [
-#  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-# Core desktop / Hyprland
-            hyprland
-            pulseaudio
-            xfce.thunar
-	    grim
-            slurp
-            satty
-	    calibre
-	    qbittorrent
-	    gnumake
-	    gcc
-            pkg-config
-	    xfce.thunar-volman
-            hyprcursor
-	    kcc
-	    inkscape
-            geeqie
-            spicetify-cli
-            spotify
-            brave
-            bibata-cursors
-            hyprpaper
-	    copilot-language-server
-            sshuttle
-            wayland
-            mailhog
-            usbutils
-            rawtherapee
-            swww
-            sshfs
-            firefox
-            swaylock-fancy
-            xorg.xhost
-            swaylock-effects
-            waybar
-            sway
-            xwayland
-            postman
-            material-cursors
-            zip
-            htop
-            wlroots
-            bash
-            unzip
-            cmatrix
-            openconnect
-            gpclient
-            xdg-desktop-portal-wlr
-            libinput-gestures
-            libinput
-            wmctrl # Useful for some commands, but you can also use hyprctl
-            xdotool  # Used to simulate keystrokes
-            ydotool
-            inotify-tools
-            glib
-            gsettings-desktop-schemas
-            xdg-desktop-portal
-            fish
-            kitty
-            neovim # Need to get nightly
-            emacs
-            gcc
-            gedit
-            rofi
-            ranger
-            libnotify
-            playerctl # do i need this?
-            gtk3
-            gtk4
-            gimp3-with-plugins
-            mako
-            pavucontrol
-            pamixer
-            brightnessctl
-            grim
-            slurp
-            wl-clipboard
-            mako
-            viewnior
-            zathura
-            imagemagick
-            wtype
-            rofi-emoji
-            mpv
-            ranger
-# Dev tools
-            nodejs
-            bun
-            jdk
-            killall
-            python3
+    # Internet / chat
+    firefox
+    brave
+    qutebrowser
+    discord
+    betterdiscordctl
+    qbittorrent
 
-            python313Packages.pip
-            burpsuite
-  # === RECON ===
-  subfinder          # subdomain enumeration
-  httpx              # probe live hosts
-  amass              # in-depth subdomain enum
-  ffuf               # web fuzzer
-  gobuster           # directory/subdomain brute force
-  feroxbuster        # recursive content discovery
-  nuclei             # vulnerability scanner with templates
-  waybackurls        # pull URLs from Wayback Machine
+    # Networking / VPN
+    openconnect
+    gpclient
+    sshuttle
+    wget
+    iperf3
 
-  # === NETWORK SCANNING ===
-  nmap               # port scanning
-  masscan            # fast port scanning
-  netcat             # network swiss army knife
-  wireshark          # packet analysis (GUI)
-  tshark             # wireshark CLI
+    # Development
+    git
+    gnumake
+    gcc
+    pkg-config
+    nodejs
+    bun
+    jdk
+    python3
+    python313Packages.pip
+    postman
+    mailhog
+    docker
+    docker-compose
 
-  # === WEB TESTING / EXPLOITATION ===
-  sqlmap             # SQL injection automation
-  nikto              # web server scanner
-  curl               # HTTP requests
-  wget               # file retrieval
-  python3            # scripting
-  python3Packages.requests
-  python3Packages.beautifulsoup4
-  python3Packages.pyyaml
+    # Security — recon
+    subfinder    # subdomain enumeration
+    httpx        # probe live hosts
+    amass        # in-depth subdomain enum
+    ffuf         # web fuzzer
+    gobuster     # directory/subdomain brute force
+    feroxbuster  # recursive content discovery
+    nuclei       # vulnerability scanner with templates
+    waybackurls  # pull URLs from the Wayback Machine
 
-  # === PASSWORD / HASH TOOLS ===
-  hashcat            # GPU hash cracking
-  john               # John the Ripper
-  	    hydra              # online brute force
+    # Security — network scanning
+    nmap
+    masscan
+    netcat
+    wireshark    # GUI packet analysis
+    tshark       # wireshark CLI
 
-  # === UTILITIES ===
-  	    jq                 # JSON parsing (great for API responses)
- 	    proxychains        # route tools through Burp
-            tor
-            openssl
-            whois
-            dnsutils           # dig, nslookup
-	    binutils
+    # Security — web testing / exploitation
+    burpsuite
+    sqlmap
+    nikto
+    curl
+    python3Packages.requests
+    python3Packages.beautifulsoup4
+    python3Packages.pyyaml
 
-# Desktop extras
-            blueberry
-            bluez
-            bluez-tools
-            xdg-user-dirs
-            gnome-keyring
-            neofetch
-            obs-studio
-            vlc
-	    sl
-            discord
-            betterdiscordctl
-            vscode
-            wget
-	    iperf3
-            git
-	    docker
-            docker-compose
-            qutebrowser
-            vim
-            ];
+    # Security — password / hash tools
+    hashcat
+    john
+    hydra
 
-    environment.variables = {
-        IM6_COMPAT = "1";
-        MAGICK_HOME = "/run/current-system/sw";
-    };
+    # Security — utilities
+    jq
+    proxychains
+    tor
+    openssl
+    whois
+    dnsutils     # dig, nslookup
+    binutils
 
-    services.iperf3 = {
-  enable = true;
-  openFirewall = true; # Opens port 5201 automatically
-};
+    # System / misc
+    htop
+    btop        # live CPU/mem/GPU + pressure monitoring
+    lm_sensors  # `sensors` for temperatures (thermal throttling checks)
+    killall
+    neofetch
+    cmatrix
+    sl
+    blueberry
+    bluez
+    bluez-tools
+    xdg-user-dirs
+    gnome-keyring
+  ];
 
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-# programs.gnupg.agent = {
-#   enable = true;
-#   enableSSHSupport = true;
-# };
+  environment.variables = {
+    IM6_COMPAT = "1";
+    MAGICK_HOME = "/run/current-system/sw";
+  };
 
-# List services that you want to enable:
-
-# Enable the OpenSSH daemon.
-# services.openssh.enable = true;
-
-# Open ports in the firewall.
-# networking.firewall.allowedTCPPorts = [ ... ];
-# networking.firewall.allowedUDPPorts = [ ... ];
-# Or disable the firewall altogether.
-# networking.firewall.enable = false;
-
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It‘s perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "25.05"; # Did you read the comment?
-
-                                          }
+  # This value determines the NixOS release from which the default settings
+  # for stateful data were taken. Leave it at the release of the first install.
+  system.stateVersion = "25.05";
+}

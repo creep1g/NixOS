@@ -1,7 +1,8 @@
-# Imports all modules witihn nixos/modules
+# Home Manager modules (imported from home.nix).
 { ... }:
 {
-	imports = [
-	    ./desktop/hyprland/config.nix
-	    ];
+  imports = [
+    ./desktop/hyprland/config.nix
+    ./desktop/conky.nix
+  ];
 }
