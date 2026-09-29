@@ -34,7 +34,7 @@
       own_window_transparent = false,
       own_window_argb_visual = true,
       own_window_argb_value = 255,
-      own_window_colour = wal.background,
+      own_window_colour = '000000',
 
       -- Absolute placement is handled by Hyprland window rules, so keep
       -- conky's own alignment neutral.
