@@ -19,6 +19,14 @@
   home.sessionVariables = {
     HYPRCURSOR_THEME = config.home.pointerCursor.name;
     HYPRCURSOR_SIZE = toString config.home.pointerCursor.size;
+
+    # Hardware-accelerate video in QtWebEngine (qutebrowser) so playback uses
+    # the Intel media engine instead of software-decoding on the CPU (which was
+    # pegging a core and adding to the memory-pressure lag). Pairs with
+    # LIBVA_DRIVER_NAME=iHD set in modules/core/intel.nix.
+    QTWEBENGINE_CHROMIUM_FLAGS =
+      "--enable-features=VaapiVideoDecoder,VaapiVideoDecodeLinuxGL,CanvasOopRasterization"
+      + " --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy";
   };
 
   home.stateVersion = "25.05";
