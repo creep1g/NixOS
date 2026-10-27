@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
+# Commit any pending config changes, then rebuild and switch.
+set -euo pipefail
+
 cd /etc/nixos
-sudo git add .
-sudo git commit -m "New commit"
+sudo git add -A
+if ! sudo git diff --cached --quiet; then
+  sudo git commit -m "${1:-Update config $(date '+%Y-%m-%d %H:%M')}"
+fi
 
 sudo nixos-rebuild switch --flake .#nixos

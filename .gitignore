@@ -1,0 +1,8 @@
+# Editor backup / swap files
+*~
+*.swp
+*.swo
+\#*\#
+.#*
+# Stray files
+/result
