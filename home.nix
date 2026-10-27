@@ -6,6 +6,7 @@
 
 # 1. Enable the cursor configuration
     home.pointerCursor = {
+        enable = true;
 # The Nix package that provides the cursor theme
         package = pkgs.bibata-cursors;
 

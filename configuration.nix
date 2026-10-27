@@ -115,7 +115,7 @@ services.tailscale.enable = true;
 # Core desktop / Hyprland
             hyprland
             pulseaudio
-            xfce.thunar
+            thunar
 	    grim
             slurp
             satty
@@ -124,7 +124,7 @@ services.tailscale.enable = true;
 	    gnumake
 	    gcc
             pkg-config
-	    xfce.thunar-volman
+	    thunar-volman
             hyprcursor
 	    kcc
 	    inkscape
@@ -140,11 +140,11 @@ services.tailscale.enable = true;
             mailhog
             usbutils
             rawtherapee
-            swww
+            awww
             sshfs
             firefox
             swaylock-fancy
-            xorg.xhost
+            xhost
             swaylock-effects
             waybar
             sway
