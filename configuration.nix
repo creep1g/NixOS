@@ -93,7 +93,7 @@
     # Hyprland / Wayland desktop
     hyprcursor
     hyprpaper
-    swww
+    awww
     waybar
     sway
     wayland
@@ -111,7 +111,7 @@
     satty
     wl-clipboard
     wtype
-    xorg.xhost
+    xhost
     glib
     gsettings-desktop-schemas
     gtk3
@@ -140,8 +140,8 @@
     obs-studio
 
     # Files
-    xfce.thunar
-    xfce.thunar-volman
+    thunar
+    thunar-volman
     ranger
     zip
     unzip

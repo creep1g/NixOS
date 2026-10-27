@@ -9,6 +9,7 @@
 
   # Cursor theme for GTK, XWayland and (via the variables below) Hyprland.
   home.pointerCursor = {
+    enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic"; # case-sensitive
     size = 24;

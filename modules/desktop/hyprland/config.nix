@@ -4,7 +4,10 @@
    wayland.windowManager.hyprland = {
     enable = true;
     # Use the hyprland package from the flake input
-    package = hyprland.packages.${pkgs.system}.hyprland;
+    package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
+    # Keep the legacy hyprlang config format (HM default became "lua" at stateVersion >= 26.05)
+    configType = "hyprlang";
 
 
     settings = {
