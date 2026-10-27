@@ -244,7 +244,6 @@
     btop        # live CPU/mem/GPU + pressure monitoring
     lm_sensors  # `sensors` for temperatures (thermal throttling checks)
     killall
-    neofetch
     cmatrix
     sl
     blueberry
