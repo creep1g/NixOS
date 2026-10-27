@@ -246,7 +246,6 @@
     killall
     cmatrix
     sl
-    blueberry
     bluez
     bluez-tools
     xdg-user-dirs
