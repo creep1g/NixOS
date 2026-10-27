@@ -240,31 +240,32 @@
         "$mainMod, mouse:273, resizewindow"
 	      ];
 
-      windowrulev2 = [
-        "workspace 2, class:^(code)$"
-        "monitor 0, class:^com-ca-directory-jxplorer-JXplorer$"
-        "move 100 100, class:^com-ca-directory-jxplorer-JXplorer$"
-        "workspace 3, class:^(firefox)$"
-        "opacity 1.0 override, class:^(firefox)$"
-        "workspace 4, class:^(craft—afreshtakeondocuments-nativefier-e0958b)$"
-        "workspace 4, class:^(jxplorer.sh)$"
-        "workspace 5, title:^(ranger)$"
-        "workspace 6, class:^(discord)$"
-        "workspace 7, class:^(Cider)$"
-        "move 0 0, title:^(flameshot)$"
-        "opacity 1, xwayland 1, class:^(Apache Directory Studio)$"
+      # Hyprland >= 0.53 syntax: "match:<prop> <regex>, <effect> <value>"
+      windowrule = [
+        "match:class ^(code)$, workspace 2"
+        "match:class ^com-ca-directory-jxplorer-JXplorer$, monitor 0"
+        "match:class ^com-ca-directory-jxplorer-JXplorer$, move 100 100"
+        "match:class ^(firefox)$, workspace 3"
+        "match:class ^(firefox)$, opacity 1.0 override"
+        "match:class ^(craft—afreshtakeondocuments-nativefier-e0958b)$, workspace 4"
+        "match:class ^(jxplorer.sh)$, workspace 4"
+        "match:title ^(ranger)$, workspace 5"
+        "match:class ^(discord)$, workspace 6"
+        "match:class ^(Cider)$, workspace 7"
+        "match:title ^(flameshot)$, move 0 0"
+        "match:class ^(Apache Directory Studio)$, match:xwayland true, opacity 1"
 
         # conky desktop widget: pin to the bottom-left of DP-1 when it is
         # connected (Hyprland falls back to the current output otherwise).
-        "float, class:^(conky)$"
-        "monitor DP-1, class:^(conky)$"
-        "move 20 100%-380, class:^(conky)$"
-        "pin, class:^(conky)$"
-        "nofocus, class:^(conky)$"
-        "noblur, class:^(conky)$"
-        "noshadow, class:^(conky)$"
-        "noborder, class:^(conky)$"
-        "rounding 0, class:^(conky)$"
+        "match:class ^(conky)$, float on"
+        "match:class ^(conky)$, monitor DP-1"
+        "match:class ^(conky)$, move 20 100%-380"
+        "match:class ^(conky)$, pin on"
+        "match:class ^(conky)$, no_focus on"
+        "match:class ^(conky)$, no_blur on"
+        "match:class ^(conky)$, no_shadow on"
+        "match:class ^(conky)$, border_size 0"
+        "match:class ^(conky)$, rounding 0"
       ];
     };
   };
