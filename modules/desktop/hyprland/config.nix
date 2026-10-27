@@ -258,7 +258,7 @@
         # connected (Hyprland falls back to the current output otherwise).
         "match:class ^(conky)$, float on"
         "match:class ^(conky)$, monitor DP-1"
-        "match:class ^(conky)$, move 20 100%-380"
+        "match:class ^(conky)$, move 20 (monitor_h-380)"
         "match:class ^(conky)$, pin on"
         "match:class ^(conky)$, no_focus on"
         "match:class ^(conky)$, no_blur on"
