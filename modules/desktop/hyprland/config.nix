@@ -254,17 +254,7 @@
         "match:title ^(flameshot)$, move 0 0"
         "match:class ^(Apache Directory Studio)$, match:xwayland true, opacity 1"
 
-        # conky desktop widget: pin to the bottom-left of DP-1 when it is
-        # connected (Hyprland falls back to the current output otherwise).
-        "match:class ^(conky)$, float on"
-        "match:class ^(conky)$, monitor DP-1"
-        "match:class ^(conky)$, move 20 (monitor_h-380)"
-        "match:class ^(conky)$, pin on"
-        "match:class ^(conky)$, no_focus on"
-        "match:class ^(conky)$, no_blur on"
-        "match:class ^(conky)$, no_shadow on"
-        "match:class ^(conky)$, border_size 0"
-        "match:class ^(conky)$, rounding 0"
+        # (conky is a layer-shell surface, so it needs no window rules.)
       ];
     };
   };
