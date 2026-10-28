@@ -1,6 +1,6 @@
 # Desktop widget: clock + CPU/memory info drawn on the Hyprland desktop.
-# Started from Hyprland's exec-once (see ./hyprland/config.nix), which also
-# holds the window rules that place it (bottom-left of DP-1 when connected).
+# Started from Hyprland's exec-once (see ./hyprland/config.nix). It is a
+# layer-shell surface on the background layer, positioned by conky itself.
 # Colours follow pywal (~/.cache/wal/colors.sh) when available.
 { pkgs, ... }:
 {
@@ -28,19 +28,19 @@
       out_to_x = false,
 
       own_window = true,
-      own_window_type = 'normal',
+      -- On Wayland 'desktop' mounts conky as a wlr-layer-shell surface on the
+      -- background layer: always below normal windows and on every workspace.
+      -- ('normal' makes it an ordinary toplevel, which Hyprland floats above
+      -- tiled windows; Hyprland window rules do not apply to layer surfaces.)
+      own_window_type = 'desktop',
       own_window_class = 'conky',
-      -- Opaque background (Hyprland rules keep it below normal windows).
-      own_window_transparent = false,
-      own_window_argb_visual = false,
-      own_window_argb_value = 255,
-      own_window_colour = wal.background,
+      -- See-through background, #AARRGGBB (alpha first): B3 is ~70% opaque.
+      own_window_color = '#B3' .. wal.background,
 
-      -- Absolute placement is handled by Hyprland window rules, so keep
-      -- conky's own alignment neutral.
-      alignment = 'top_left',
-      gap_x = 0,
-      gap_y = 0,
+      -- Placement is conky's own: bottom-left corner of the output.
+      alignment = 'bottom_left',
+      gap_x = 20,
+      gap_y = 20,
       minimum_width = 300,
       maximum_width = 300,
       border_inner_margin = 16,
